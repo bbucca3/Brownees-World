@@ -86,14 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSSAlertView/JSSAlertView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/paper-onboarding/paper_onboarding.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSSAlertView/JSSAlertView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/paper-onboarding/paper_onboarding.framework"
 fi

@@ -10,6 +10,5 @@ target 'Brownees World' do
   pod 'Alamofire'
   pod 'JSSAlertView'
   pod 'paper-onboarding'
-  pod 'RAMAnimatedTabBarController'
 
 end
