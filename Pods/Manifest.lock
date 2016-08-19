@@ -2,20 +2,23 @@ PODS:
   - Alamofire (3.4.1)
   - JSSAlertView (1.1.5)
   - paper-onboarding (1.1.3)
+  - RAMAnimatedTabBarController (1.5.3)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
   - JSSAlertView
   - paper-onboarding
+  - RAMAnimatedTabBarController
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   JSSAlertView: 1ff5d4dcb28b00a38c0293c4c555231c02590be1
   paper-onboarding: e7c5683bf2c84eb9424f626579564e4c0a20d34a
+  RAMAnimatedTabBarController: 04b624cf8958a0032bf7fa9c0f2c515f59d30b9c
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 1d09baf4df9e525d0a228b043f532f56d4ba21b7
+PODFILE CHECKSUM: 53b0e8b204f56014ec4ed7390d3f84239e19217b
 
 COCOAPODS: 1.0.1

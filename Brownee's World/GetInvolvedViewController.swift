@@ -22,10 +22,13 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     var pinsArray: [CustomPointAnnotation] = []
     
     @IBAction func clearMapButton(sender: UIButton) {
-        mapView.removeAnnotations(pinsArray)
         pinsArray = []
-        let worldRegion = MKCoordinateRegionForMapRect(MKMapRectMake(21.652538062803, -127.620375523875420, 1.0, 1.0))
+        mapView.removeAnnotations(pinsArray)
+        
+        let worldRegion = MKCoordinateRegionForMapRect(MKMapRectMake(20.0, 20.0, 500.0, 500.0))
+        
         mapView.region = worldRegion
+        
     }
     
     // function to make keyboard go down when return is pressed

@@ -56,9 +56,9 @@ class AboutViewController: UIViewController, PaperOnboardingDataSource {
         let descriptionFont = UIFont(name: "Helvetica Neue", size: 16.0) ?? UIFont.systemFontOfSize(14.0)
         
         return[
-            ("footOnboard", "Education", "Answer questions about the life of a rescue dog and dogs in general. Swipe right to learn more.", "dog_footprint_tab", UIColorFromHex(0xECDACC), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("houseOnboard", "Get Involved", "Search for shelters within a 20 mile radius from any US zipcode.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("browneeOnboard", "Brownee's World", "Search for local rescue organizations or shelters in your area to donate supplies and/or potentially volunteer. Test your knowledge about different rescue dog scenarios with questions designed for all ages.", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
+            ("footOnboard", "Education", "Answer questions about the life of a rescue dog, and dogs in general. Swipe right to learn more.", "dog_footprint_tab", UIColorFromHex(0xECDACC), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            ("houseOnboard", "Get Involved", "Search for animal shelters and rescue organizations within a 20 mile radius from any US zipcode.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            ("browneeOnboard", "Brownee's World", "Search and show contact info for local rescue organizations or shelters in your area to donate supplies or possibly volunteer. Test your knowledge about rescue dogs with questions designed for all ages.", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
             ][index]
     }
     
