@@ -7,10 +7,24 @@
 //
 
 import UIKit
-
+// class for each cell for donation items (SuppliesTableViewController)
 class SuppliesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelCell: UILabel!
+    
+    @IBOutlet weak var supplyImage: UIImageView!
+    
+    var categorySupply: String? {
+        didSet {
+            self.labelCell.text = categorySupply
+        }
+    }
+    
+    var imageSupply: UIImage? {
+        didSet {
+            self.supplyImage.image = imageSupply
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +33,6 @@ class SuppliesTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

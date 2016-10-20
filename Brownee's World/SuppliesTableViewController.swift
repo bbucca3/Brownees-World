@@ -8,29 +8,17 @@
 
 import UIKit
 import SafariServices
+import JSSAlertView
 
 
 class SuppliesTableViewController: UITableViewController {
     
-    var suppliesList = ["All Kinds of Pet Food", "Newspaper", "Paper Towels", "Trash Bags", "Blankets", "Dog Toys", "Pig Ear Chews", "Laundry Detergent", "Used Leashes", "Sheets (new or used)"]
+    var suppliesList = ["All Kinds of Pet Food", "Newspaper", "Paper Towels", "Trash Bags", "Blankets", "Dog Toys", "Pig Ear Chews", "Laundry Detergent", "Leashes", "Sheets (New or Used)"]
+    
+    var supplyImages = ["tableCell_dogbowl", "tableCell_news", "tableCell_paper", "tableCell_trash", "tableCell_blanket", "tableCell_toy", "tableCell_pig", "tableCell_laundry", "tableCell_dogleash", "tableCell_sheets"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
-//        let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
-//        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
-//        let gradientLocations: [Float] = [0.0, 1.0]
-//        let gradientLayer: CAGradientLayer = CAGradientLayer()
-//        gradientLayer.colors = gradientColors
-//        gradientLayer.locations = gradientLocations
-//        gradientLayer.frame = self.view.bounds
-//        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,9 +40,25 @@ class SuppliesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // create each cell custom SuppliesTableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SuppliesTableViewCell
-        
-        cell.labelCell.text = suppliesList[indexPath.row]
+        // sets each cell label
+        cell.categorySupply = suppliesList[indexPath.row]
+        // sets each cell image
+        cell.imageSupply = UIImage(imageLiteral: supplyImages[indexPath.row])
+        // border details for each cell
+        cell.layer.borderWidth = 1.0
+        cell.layer.cornerRadius = 35
+        // custom background gradient
+        let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
+        let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
+        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientLocations: [Float] = [0.0, 1.0]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.locations = gradientLocations
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
 
         return cell
     }

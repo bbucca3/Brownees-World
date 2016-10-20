@@ -14,13 +14,10 @@ import JSSAlertView
 class AboutViewController: UIViewController, PaperOnboardingDataSource {
 
     @IBOutlet weak var skipButton: UIButton!
-    //@IBOutlet weak var skipButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  skipButton.addTarget(self, action: Selector("clickMe"), forControlEvents: .TouchUpInside)
-       // skipButton.hidden = false
-        // Do any additional setup after loading the view.
+        //  paper onboarding
         let onboarding = PaperOnboarding(itemsCount: 3)
         onboarding.dataSource = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
@@ -40,8 +37,6 @@ class AboutViewController: UIViewController, PaperOnboardingDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     func onboardingWillTransitonToIndex(index: Int) {
         // skipButton.hidden = index == 2 ? false : true
     }
@@ -56,9 +51,9 @@ class AboutViewController: UIViewController, PaperOnboardingDataSource {
         let descriptionFont = UIFont(name: "Helvetica Neue", size: 16.0) ?? UIFont.systemFontOfSize(14.0)
         
         return[
-            ("footOnboard", "Education", "Answer questions about the life of a rescue dog and dogs in general. Swipe right to learn more.", "dog_footprint_tab", UIColorFromHex(0xECDACC), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("houseOnboard", "Get Involved", "Search for shelters within a 20 mile radius from any US zipcode.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("browneeOnboard", "Brownee's World", "Search for local rescue organizations or shelters in your area to donate supplies and/or potentially volunteer. Test your knowledge about different rescue dog scenarios with questions designed for all ages.", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
+            ("footOnboard", "Education", "Answer questions about the life of a rescue dog. Swipe right to view more info.", "dog_footprint_tab", UIColorFromHex(0xECDACC), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            ("houseOnboard", "Get Involved", "Search for animal shelters and rescue organizations within a 20 mile radius from any US zipcode.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            ("browneeOnboard", "Brownee's World", "Learn more about rescue dogs, and dogs in general, by answering questions designed for all ages. Search for local rescue organizations or shelters in your area to donate supplies or volunteer time.", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
             ][index]
     }
     

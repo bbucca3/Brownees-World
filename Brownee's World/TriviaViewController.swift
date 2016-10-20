@@ -16,9 +16,9 @@ import SafariServices
 class TriviaViewController: UIViewController {
     
     // titles of cells
-    var specficCategories = ["Before", "Visiting", "First Days", "Travel", "Other Dogs", "Family", "Food Safety", "Home Safety", "Commitments"]
+    var specficCategories = ["Before", "Visiting", "First Days", "Travel", "Meeting Other Dogs", "Family Life", "Food Safety", "Home Safety", "Commitments"]
     
-    var descriptionCategories = ["Before", "Visiting", "First Days", "Travelling", "Other Dogs", "Family", "Food Safety", "Home Safety", "Commitments"]
+    var descriptionCategories = ["Before", "Visiting", "First Days", "Travelling", "Meeting Other Dogs", "Family Life", "Food Safety", "Home Safety", "Commitments"]
     
     var dogImages = ["dog1", "dog2", "dog3", "dog4", "dog5", "dog6", "dog7", "dog8", "dog9"]
     
@@ -93,13 +93,13 @@ class TriviaViewController: UIViewController {
             if(question.category.containsString("Visiting")){
                 visitingArray.append(question)
             }
-            if(question.category.containsString("Other Dogs")){
+            if(question.category.containsString("Meeting Other Dogs")){
                 otherDogsArray.append(question)
             }
             if(question.category.containsString("First Days")){
                 firstDaysArray.append(question)
             }
-            if(question.category.containsString("Family")){
+            if(question.category.containsString("Family Life")){
                 familyArray.append(question)
             }
             if(question.category.containsString("Home Safety")){
@@ -116,9 +116,9 @@ class TriviaViewController: UIViewController {
         self.allQuestionsDictionary["Travel"] = travelArray
         self.allQuestionsDictionary["Before"] = beforeArray
         self.allQuestionsDictionary["Visiting"] = visitingArray
-        self.allQuestionsDictionary["Other Dogs"] = otherDogsArray
+        self.allQuestionsDictionary["Meeting Other Dogs"] = otherDogsArray
         self.allQuestionsDictionary["First Days"] = firstDaysArray
-        self.allQuestionsDictionary["Family"] = familyArray
+        self.allQuestionsDictionary["Family Life"] = familyArray
         self.allQuestionsDictionary["Food Safety"] = foodSafeArray
         self.allQuestionsDictionary["Home Safety"] = homeSafeArray
         self.allQuestionsDictionary["Commitments"] = commitmentsArray
@@ -154,8 +154,7 @@ class TriviaViewController: UIViewController {
     
 }
     
-extension TriviaViewController : UICollectionViewDataSource {
-    
+extension TriviaViewController : UICollectionViewDataSource {    
     // set the number of individual collection view cells
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return specficCategories.count

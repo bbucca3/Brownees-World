@@ -115,14 +115,14 @@
 				6331CB441D3FB1FD00A72E8D /* ViewController.swift */,
 				6331CB581D400D0C00A72E8D /* TriviaViewController.swift */,
 				636CFA5E1D47F1DF008CA728 /* QuestionViewController.swift */,
-				6331CB461D3FB1FD00A72E8D /* Main.storyboard */,
 				63D8C6971D5D08B5009A4613 /* AboutViewController.swift */,
 				636CFA5C1D466707008CA728 /* CategoryTitleCollectionViewCell.swift */,
 				636CFA641D5391A3008CA728 /* CustomPointAnnotation.swift */,
+				632590A91D5D412300862F7A /* InfoViewController.swift */,
+				6331CB461D3FB1FD00A72E8D /* Main.storyboard */,
 				6331CB491D3FB1FD00A72E8D /* Assets.xcassets */,
 				6331CB4B1D3FB1FD00A72E8D /* LaunchScreen.storyboard */,
 				6331CB4E1D3FB1FD00A72E8D /* Info.plist */,
-				632590A91D5D412300862F7A /* InfoViewController.swift */,
 			);
 			name = "Brownees World";
 			path = "Brownee's World";
