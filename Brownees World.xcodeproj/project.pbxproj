@@ -109,14 +109,14 @@
 				6331CB5D1D414F6E00A72E8D /* Question.swift */,
 				6331CB5C1D414F6E00A72E8D /* questions.json */,
 				6331CB421D3FB1FD00A72E8D /* AppDelegate.swift */,
+				6331CB441D3FB1FD00A72E8D /* ViewController.swift */,
+				63D8C6971D5D08B5009A4613 /* AboutViewController.swift */,
 				6331CB561D3FFF8400A72E8D /* GetInvolvedViewController.swift */,
+				6331CB581D400D0C00A72E8D /* TriviaViewController.swift */,
+				636CFA5C1D466707008CA728 /* CategoryTitleCollectionViewCell.swift */,
+				636CFA5E1D47F1DF008CA728 /* QuestionViewController.swift */,
 				632590AB1D5F813F00862F7A /* SuppliesTableViewController.swift */,
 				632590AD1D5F84A800862F7A /* SuppliesTableViewCell.swift */,
-				6331CB441D3FB1FD00A72E8D /* ViewController.swift */,
-				6331CB581D400D0C00A72E8D /* TriviaViewController.swift */,
-				636CFA5E1D47F1DF008CA728 /* QuestionViewController.swift */,
-				63D8C6971D5D08B5009A4613 /* AboutViewController.swift */,
-				636CFA5C1D466707008CA728 /* CategoryTitleCollectionViewCell.swift */,
 				636CFA641D5391A3008CA728 /* CustomPointAnnotation.swift */,
 				632590A91D5D412300862F7A /* InfoViewController.swift */,
 				6331CB461D3FB1FD00A72E8D /* Main.storyboard */,
@@ -175,6 +175,7 @@
 					6331CB3E1D3FB1FD00A72E8D = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8JDE23S344;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -399,6 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animalassistance.Brownees-World";
 				PRODUCT_NAME = "Brownees World";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -412,6 +414,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animalassistance.Brownees-World";
 				PRODUCT_NAME = "Brownees World";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

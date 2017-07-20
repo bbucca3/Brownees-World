@@ -14,6 +14,7 @@ struct Organization {
     let address: String
     let city: String
     let state: String
+    let country: String
     let zipcode: String
     let phone: String
     let website: String
@@ -23,6 +24,7 @@ struct Organization {
         self.address = json["orgAddress"].stringValue
         self.city = json["orgCity"].stringValue
         self.state = json["orgState"].stringValue
+        self.country = json["orgCountry"].stringValue
         self.zipcode = json["orgPostalcode"].stringValue
         self.phone = json["orgPhone"].stringValue
         self.website = json["orgWebsiteUrl"].stringValue

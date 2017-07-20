@@ -4,7 +4,6 @@
 //
 //  Created by Benjamin Bucca on 8/11/16.
 //  Copyright © 2016 Animal Assistance. All rights reserved.
-//
 
 import UIKit
 import JSSAlertView
@@ -12,10 +11,10 @@ import JSSAlertView
 class InfoViewController: UIViewController {
 
     // donate to animal assistance
-    @IBAction func donateButton(sender: AnyObject) {
+    @IBAction func donateButton(_ sender: AnyObject) {
         // implicit unwrap url open in safari
-        if let requestUrl = NSURL(string: "http://animalassistance.org/donate.html") {
-            UIApplication.sharedApplication().openURL(requestUrl)
+        if let requestUrl = URL(string: "http://animalassistance.org/donate.html") {
+            UIApplication.shared.openURL(requestUrl as URL)
         }
         
     }
@@ -26,13 +25,13 @@ class InfoViewController: UIViewController {
         // custom background gradient
         let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
         let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLocations: [Float] = [0.0, 1.0]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
-        gradientLayer.locations = gradientLocations
+        gradientLayer.locations = gradientLocations as [NSNumber]?
         gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     override func didReceiveMemoryWarning() {

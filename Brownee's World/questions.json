@@ -4,91 +4,91 @@
       "title":"Is it a good idea to do research about specific breeds before rescuing?",
       "answer" : true,
       "explanation":"Doing research about specific breeds will expand your knowledge about all breeds!",
-      "category" : "Before"
+      "category" : "Before Rescuing"
     },
     {
       "title":"Should you visit a few different shelters before deciding to rescue?",
       "answer" : true,
       "explanation":"If possible, looking around is advisable.",
-      "category" : "Before"
+      "category" : "Before Rescuing"
     }, 
     {
       "title":"Is it a good idea to have your mind set on one specific breed?",
       "answer" : false,
       "explanation":"Keep an open mind!",
-      "category" : "Before"
+      "category" : "Before Rescuing"
     }, 
     {
       "title":"Should all family members be open to the possibilty of rescuing a dog?",
       "answer" : true,
       "explanation":"A dog can be a part of your family for the next 12-15 years.",
-      "category" : "Before"
+      "category" : "Before Rescuing"
     }, 
     {
       "title":"Is it necessary for you to have a name for your dog picked out already?",
       "answer" : false,
       "explanation":"Not necessarily, consider waiting until you adopt your pet.",
-      "category" : "Before"
+      "category" : "Before Rescuing"
     }, 
     {
       "title":"When visiting a shelter for the first time is it a good idea to make fast, sudden movements around the dogs?",
       "answer" : false,
       "explanation":"That's not a good idea, the dogs might be nervous and could be alarmed. Ask for assistance and observe the behavior of the dogs.",
-      "category" : "Visiting"
+      "category" : "Visiting Shelters"
     }, 
     {
       "title":"When visiting a shelter for the first time, should you approach the dogs?",
       "answer" : false,
       "explanation":"Ask the shelter manager first and observe the rules.",
-      "category" : "Visiting"
+      "category" : "Visiting Shelters"
     },
     {
       "title":"When visiting a shelter should you first allow a dog to sniff you before reaching to pet?",
       "answer" : true,
       "explanation":"Remember rescue dogs may be nervous. Don't immedietly reach to pet, allow them to sniff first.",
-      "category" : "Visiting"
+      "category" : "Visiting Shelters"
     }, 
     {
       "title":"When meeting with a dog for the first time, is it best to pet the dog on the top of the head?",
       "answer" : false,
       "explanation":"Better places are behind the ears and under the chin.",
-      "category" : "Visiting"
+      "category" : "Visiting Shelters"
     }, 
     {
       "title":"When visiting a shelter for the first time, should you avoid talking in a loud or high-pitched tone?",
       "answer" : true,
       "explanation":"The dogs might get too excited because of the loud or high-pitched tone.",
-      "category" : "Visiting"
+      "category" : "Visiting Shelters"
     },
     {
       "title":"Should you continue with crate training if your dog is already used to a crate?",
       "answer" : true,
       "explanation":"If the dog is already used to a crate, that will help your dog to feel more comfortable at first.",
-      "category" : "First Days"
+      "category" : "First Days Together"
     },
     {
       "title":"Is it a good idea for you to be patient with toilet training (house breaking your dog)?",
       "answer" : true,
       "explanation":"Dogs learn quickly but may have a few accidents along the way.",
-      "category" : "First Days"
+      "category" : "First Days Together"
     },
     {
       "title":"Is it a good idea to feed your dog food that is grain free and without artificial colors?",
       "answer" : true,
       "explanation":"That's a good idea.",
-      "category" : "First Days"
+      "category" : "First Days Together"
     },
     {
       "title":"Should you sometimes give your dog a treat as a reward for good behavior?",
       "answer" : true,
       "explanation":"Sometimes treats can be used to reinforce good behavior.",
-      "category" : "First Days"
+      "category" : "First Days Together"
     },
     {
       "title":"Should you allow your dog to walk off leash in public parks?",
       "answer" : false,
       "explanation":"Not a good idea, check and be aware of local leash laws.",
-      "category" : "First Days"
+      "category" : "First Days Together"
     },
     {
       "title":"While walking your dog on a leash, should you allow your dog to pull you toward another dog?",
@@ -154,31 +154,31 @@
       "title":"Is it a good idea to take your dog on a short drive before driving with your dog for a longer distance?",
       "answer" : true,
       "explanation":"Use shorter drives as practice for longer drives.",
-      "category" : "Travel"
+      "category" : "Travelling"
     },
     {
       "title":"Should you make sure that your dog is secure in the backseat of the car while driving?",
       "answer" : true,
       "explanation":"That's a good idea. You should not allow your dog to sit on your lap in the front seat of the car.",
-      "category" : "Travel"
+      "category" : "Travelling"
     },
     {
       "title":"Is it a good idea to have a blanket spread on the backseat of your car for your dog to lay on?",
       "answer" : true,
       "explanation":"That's a good idea! Your dog will feel more comfortable and your car will stay cleaner.",
-      "category" : "Travel"
+      "category" : "Travelling"
     },
     {
       "title":"Should you keep water in your car just in case your dog needs to hydrate?",
       "answer" : true,
       "explanation":"That's a good idea! You might need water after a long drive (followed a long walk).",
-      "category" : "Travel"
+      "category" : "Travelling"
     },
     {
       "title":"When travelling with your dog on an airplane, is it a good idea to have your dog's ID visible?",
       "answer" : true,
       "explanation":"That's a good idea because the airlines identify and comfort your do.",
-      "category" : "Travel"
+      "category" : "Travelling"
     },
       {
         "title":"Is it safe to feed your dog grapes?",

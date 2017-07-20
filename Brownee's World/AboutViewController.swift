@@ -26,8 +26,8 @@ class AboutViewController: UIViewController, PaperOnboardingDataSource {
         self.view.addSubview(skipButton)
         
         // add constraints
-        for attribute: NSLayoutAttribute in [.Left, .Right, .Top, .Bottom] {
-            let constraint = NSLayoutConstraint(item: onboarding, attribute: attribute,relatedBy: .Equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0)
+        for attribute: NSLayoutAttribute in [.left, .right, .top, .bottom] {
+            let constraint = NSLayoutConstraint(item: onboarding, attribute: attribute,relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0)
             view.addConstraint(constraint)
         }
     }
@@ -37,26 +37,28 @@ class AboutViewController: UIViewController, PaperOnboardingDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    func onboardingWillTransitonToIndex(index: Int) {
+    func onboardingWillTransitonToIndex(_ index: Int) {
         // skipButton.hidden = index == 2 ? false : true
     }
     
-    func onboardingDidTransitonToIndex(index: Int) {
+    func onboardingDidTransitonToIndex(_ index: Int) {
         
     }
-    
-    func onboardingItemAtIndex(index: Int) -> OnboardingItemInfo {
-        
-        let titleFont = UIFont(name: "Helvetica Neue", size: 38.0) ?? UIFont.boldSystemFontOfSize(36.0)
-        let descriptionFont = UIFont(name: "Helvetica Neue", size: 16.0) ?? UIFont.systemFontOfSize(14.0)
-        
+    // func for onboarding
+    func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
+        // font for each title text
+        let titleFont = UIFont(name: "Helvetica Neue", size: 38.0) ?? UIFont.boldSystemFont(ofSize: 36.0)
+        // font for each description text
+        let descriptionFont = UIFont(name: "Helvetica Neue", size: 16.0) ?? UIFont.systemFont(ofSize: 14.0)
+        // array: main image, title text, description text, tab image, background color,
+        // title text color, description text color, title font, description font
         return[
-            ("footOnboard", "Education", "Answer questions about the life of a rescue dog. Swipe right to view more info.", "dog_footprint_tab", UIColorFromHex(0xECDACC), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("houseOnboard", "Get Involved", "Search for animal shelters and rescue organizations within a 20 mile radius from any US zipcode.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("browneeOnboard", "Brownee's World", "Learn more about rescue dogs, and dogs in general, by answering questions designed for all ages. Search for local rescue organizations or shelters in your area to donate supplies or volunteer time.", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
+            ("browneeOnboard", "Brownee's World", "Please swipe right", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            ("footOnboard", "Education", "Engage in questions about the life of a rescue dog, and dogs in general. Swipe right to see more information.", "dog_footprint_tab", UIColorFromHex(0xFDF1E6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            ("houseOnboard", "Get Involved", "Search for animal shelters/rescue organizations within a 5, 10, 15, or 20 mile radius from any US zipcode. Please allow a moment for search to load.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
             ][index]
     }
-    
+    // func for number of onboarding pages
     func onboardingItemsCount() -> Int {
         return 3
     }

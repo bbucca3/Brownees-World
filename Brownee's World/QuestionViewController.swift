@@ -21,6 +21,8 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var dogFoodImage: UIImageView!
     
+    @IBOutlet weak var dogHouseImage: UIImageView!
+    
     @IBOutlet weak var categoryLabel: UILabel!
     
     // received from segue
@@ -30,27 +32,28 @@ class QuestionViewController: UIViewController {
     // index for dogImage transform
     var dogIndex : Float = 0.0
     // yes button
-    @IBAction func trueButton(sender: UIButton) {
+    @IBAction func trueButton(_ sender: UIButton) {
         self.checkAnswer(true)
     }
     // no button
-    @IBAction func falseButton(sender: UIButton) {
+    @IBAction func falseButton(_ sender: UIButton) {
         self.checkAnswer(false)
     }
     
     // function that accepts either true or false (usersAnswer)
-    func checkAnswer(usersAnswer: Bool) {
+    func checkAnswer(_ usersAnswer: Bool) {
         // check usersAnswer true or false
         if(questionArray[currentIndex].ans == usersAnswer) {
             // show dog and dogbowl image
-            dogImage.hidden = false
-            dogFoodImage.hidden = false
+            dogImage.isHidden = false
+            dogFoodImage.isHidden = false
+            dogHouseImage.isHidden = false 
             // distance to increase dog each question
             dogIndex += 20.0
             // animate dog for each correct answer
-            UIView.animateWithDuration(1.0) {
-                self.dogImage.transform = CGAffineTransformMakeTranslation(CGFloat(self.dogIndex), 0)
-            }
+            UIView.animate(withDuration: 1.0, animations: {
+                self.dogImage.transform = CGAffineTransform(translationX: CGFloat(self.dogIndex), y: 0)
+            }) 
             // increment (question) array index
             currentIndex += 1
             // if question # is greater than or equal to num of questions then seque back
@@ -64,14 +67,14 @@ class QuestionViewController: UIViewController {
         }
             
         else {
-            // show modal for considering
-            dispatch_async(dispatch_get_main_queue()) { [unowned self] in
-                let alertView = JSSAlertView().show(
+            // show modal for consideration answer
+            DispatchQueue.main.async { [unowned self] in
+                let alertView = JSSAlertView().warning(
                     self,
                     title: "Consider",
                     text: self.questionArray[self.currentIndex].explanation,
-                    buttonText: "Ok",
-                    color: UIColorFromHex(0x942522, alpha: 1))
+                    buttonText: "Ok"
+                    )
                 alertView.addAction(self.showNextQuestion)
                 alertView.setTitleFont("Helvetica")
                 alertView.setTextFont("Helvetica")
@@ -81,7 +84,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    // function that shows next question from array of questions
+    // function that displays next question text from array of questions and updates score
     func showNextQuestion() {
         questionField.text = questionArray[currentIndex].question
         scoreField.text = "Question number: " + String(currentIndex+1) + " / " + String(questionArray.count)
@@ -91,21 +94,23 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         // index for going through questionArray
         currentIndex = 0
+        // label text of question category
         categoryLabel.text = questionArray[currentIndex].category
+        // question text
         questionField.text = questionArray[currentIndex].question
         // custom background gradient
         let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
         let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLocations: [Float] = [0.0, 1.0]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
-        gradientLayer.locations = gradientLocations
+        gradientLayer.locations = gradientLocations as [NSNumber]?
         gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         showNextQuestion()
     }
 
@@ -116,7 +121,7 @@ class QuestionViewController: UIViewController {
     
     func finishedWithQuestions() {
         let customIcon:UIImage! = UIImage(named: "dog_footprint_filled")        
-        dispatch_async(dispatch_get_main_queue()) { [unowned self] in
+        DispatchQueue.main.async { [unowned self] in
             let alertView = JSSAlertView().show(
                 self,
                 title: "Finished",
@@ -132,7 +137,7 @@ class QuestionViewController: UIViewController {
     }
     
     func finishedSegue() {
-        self.performSegueWithIdentifier("cancelSegue", sender: self)
+        self.performSegue(withIdentifier: "cancelSegue", sender: self)
         return
     }
     

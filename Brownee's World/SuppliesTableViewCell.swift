@@ -7,11 +7,11 @@
 //
 
 import UIKit
-// class for each cell for donation items (SuppliesTableViewController)
+// class for each cell for Donatable Items (SuppliesTableViewController)
 class SuppliesTableViewCell: UITableViewCell {
-
+    // text
     @IBOutlet weak var labelCell: UILabel!
-    
+    // image
     @IBOutlet weak var supplyImage: UIImageView!
     
     var categorySupply: String? {
@@ -31,7 +31,7 @@ class SuppliesTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }

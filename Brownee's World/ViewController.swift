@@ -17,13 +17,13 @@ class ViewController: UIViewController, UITabBarDelegate {
     
         let topColor = hexStringToUIColor("FFF7F0")
         let bottomColor = hexStringToUIColor("ECDACC")
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLocations: [Float] = [0.0, 1.0]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
-        gradientLayer.locations = gradientLocations
+        gradientLayer.locations = gradientLocations as [NSNumber]?
         gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
         
         //state the font that we want
         let font = UIFont(name: "Helvetica", size: 12)
@@ -33,8 +33,8 @@ class ViewController: UIViewController, UITabBarDelegate {
         let selectedObjs = NSArray(objects: font!, hexStringToUIColor("442C1D"))
         //setting it
         let keys = NSArray(objects: NSFontAttributeName, NSForegroundColorAttributeName)
-        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: objs as [AnyObject], forKeys: keys as! [NSCopying]) as? [String : AnyObject], forState: UIControlState.Normal)
-        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: selectedObjs as [AnyObject], forKeys: keys as! [NSCopying]) as? [String : AnyObject], forState: UIControlState.Selected)
+        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: objs as [AnyObject], forKeys: keys as! [NSCopying]) as? [String : AnyObject], for: UIControlState.normal)
+        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: selectedObjs as [AnyObject], forKeys: keys as! [NSCopying]) as? [String : AnyObject], for: UIControlState.selected)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,28 +43,28 @@ class ViewController: UIViewController, UITabBarDelegate {
     }
 
     
-    @IBAction func aboutButton(sender: UIButton) {
+    @IBAction func aboutButton(_ sender: UIButton) {
     }
     
-    @IBAction func educationButton(sender: UIButton) {
+    @IBAction func educationButton(_ sender: UIButton) {
         tabBarController?.selectedIndex = 1
     }
     
-    @IBAction func involvedButton(sender: UIButton) {
+    @IBAction func involvedButton(_ sender: UIButton) {
          tabBarController?.selectedIndex = 2
     }
     
     
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
-        if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
-        }
+    func hexStringToUIColor (_ hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines as NSCharacterSet) as CharacterSet).uppercased()
+//        if (cString.hasPrefix("#")) {
+//            cString = cString.substring(from: cString.startIndex.advancedBy(1))
+//        }
         if ((cString.characters.count) != 6) {
-            return UIColor.grayColor()
+            return UIColor.gray
         }
         var rgbValue:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgbValue)
+        Scanner(string: cString).scanHexInt32(&rgbValue)
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
@@ -73,7 +73,7 @@ class ViewController: UIViewController, UITabBarDelegate {
             )
     }
     
-    @IBAction func homeSegue(segue: UIStoryboardSegue) {
+    @IBAction func homeSegue(_ segue: UIStoryboardSegue) {
         
     }
     
