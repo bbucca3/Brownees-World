@@ -1,0 +1,51 @@
+
+/* Class = "UITabBarItem"; title = "Get Involved"; ObjectID = "1Yj-9D-JnY"; */
+"1Yj-9D-JnY.title" = "Get Involved";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "8BT-nx-8XU"; */
+"8BT-nx-8XU.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "8az-vS-b0P"; */
+"8az-vS-b0P.normalTitle" = "Back";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "A0u-rl-AAA"; */
+"A0u-rl-AAA.title" = "Home";
+
+/* Class = "UITabBarItem"; title = "Education"; ObjectID = "EO8-4R-1UW"; */
+"EO8-4R-1UW.title" = "Education";
+
+/* Class = "UIBarButtonItem"; title = "Click to Go Back"; ObjectID = "PCe-GP-oKG"; */
+"PCe-GP-oKG.title" = "Click to Go Back";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TQd-gE-VYh"; */
+"TQd-gE-VYh.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "XSQ-Ue-CaS"; */
+"XSQ-Ue-CaS.normalTitle" = "Back";
+
+/* Class = "UITextView"; text = "Search powered by RescueGroups.org API. Organizations can sign up via RescueGroups.org for free."; ObjectID = "Zm9-gw-B4b"; */
+"Zm9-gw-B4b.text" = "Search powered by RescueGroups.org API. Organizations can sign up via RescueGroups.org for free.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bKR-tf-ex3"; */
+"bKR-tf-ex3.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "dWN-CQ-2G8"; */
+"dWN-CQ-2G8.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UITextField"; placeholder = "Enter 5 Digit Zipcode"; ObjectID = "diR-NK-ShZ"; */
+"diR-NK-ShZ.placeholder" = "Enter 5 Digit Zipcode";
+
+/* Class = "UILabel"; text = "Question Categories"; ObjectID = "fDg-cz-mS6"; */
+"fDg-cz-mS6.text" = "Question Categories";
+
+/* Class = "UITextView"; text = "Special thanks to Animal Assistance 501c3, Brownee the Plain Brown Dog LLC, and everyone at Make School Summer Academy 2016. Icons attributed to Icons8. "; ObjectID = "jDS-Df-vR7"; */
+"jDS-Df-vR7.text" = "Special thanks to Animal Assistance 501c3, Brownee the Plain Brown Dog LLC, and everyone at Make School Summer Academy 2016. Icons attributed to Icons8. ";
+
+/* Class = "UIButton"; normalTitle = "Donate to Animal Assistance"; ObjectID = "vL8-YO-9fV"; */
+"vL8-YO-9fV.normalTitle" = "Donate to Animal Assistance";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vzb-qO-Eb0"; */
+"vzb-qO-Eb0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "w4j-FF-1m5"; */
+"w4j-FF-1m5.text" = "Label";
