@@ -9,11 +9,19 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController, UITabBarDelegate {
+class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDelegate {
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
     
         let topColor = hexStringToUIColor("FFF7F0")
         let bottomColor = hexStringToUIColor("ECDACC")
@@ -41,6 +49,27 @@ class ViewController: UIViewController, UITabBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // swipe gesture detect
+    func respondToSwipeGesture(_ gesture: UIGestureRecognizer)
+    {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer
+        {
+            switch swipeGesture.direction
+            {
+            case UISwipeGestureRecognizerDirection.right:
+                //write your logic for right swipe
+                print("Swiped right")
+                
+            case UISwipeGestureRecognizerDirection.left:
+                //write your logic for left swipe
+                print("Swiped left")
+                
+            default:
+                break
+            }
+        }
+    }
 
     
     @IBAction func aboutButton(_ sender: UIButton) {
@@ -57,9 +86,7 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     func hexStringToUIColor (_ hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines as NSCharacterSet) as CharacterSet).uppercased()
-//        if (cString.hasPrefix("#")) {
-//            cString = cString.substring(from: cString.startIndex.advancedBy(1))
-//        }
+
         if ((cString.characters.count) != 6) {
             return UIColor.gray
         }
