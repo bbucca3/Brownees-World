@@ -10,4 +10,4 @@ There is a search feature to look for rescue organizations and animal shelters v
 
 
 
-[Brownee's World](https://itunes.apple.com/us/app/id1143337193) button graphics and in-app icons attributed to Icons8.
+Brownee's World button graphics and in-app icons attributed to Icons8.
