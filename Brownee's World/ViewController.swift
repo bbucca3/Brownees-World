@@ -15,14 +15,16 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
+        // swipe detection        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
-    
+        
+        // background color gradient
         let topColor = hexStringToUIColor("FFF7F0")
         let bottomColor = hexStringToUIColor("ECDACC")
         let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
@@ -50,7 +52,9 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
         // Dispose of any resources that can be recreated.
     }
     
+    
     // swipe gesture detect
+    
     func respondToSwipeGesture(_ gesture: UIGestureRecognizer)
     {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer
@@ -70,11 +74,7 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
             }
         }
     }
-
-    
-    @IBAction func aboutButton(_ sender: UIButton) {
-    }
-    
+    // button links to tab bar index
     @IBAction func educationButton(_ sender: UIButton) {
         tabBarController?.selectedIndex = 1
     }
@@ -83,6 +83,9 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
          tabBarController?.selectedIndex = 2
     }
     
+    @IBAction func helpButton(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 3
+    }
     
     func hexStringToUIColor (_ hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines as NSCharacterSet) as CharacterSet).uppercased()

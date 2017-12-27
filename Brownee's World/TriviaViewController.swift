@@ -29,7 +29,7 @@ class TriviaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // custom background gradient
         let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
         let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
         let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
@@ -39,8 +39,8 @@ class TriviaViewController: UIViewController {
         gradientLayer.locations = gradientLocations as [NSNumber]?
         gradientLayer.frame = self.view.bounds
         self.view.layer.insertSublayer(gradientLayer, at: 0)
-        
-        loaddata()
+        // function call to populate json data for questions
+        _ = loaddata()
     }
     
     override func didReceiveMemoryWarning() {

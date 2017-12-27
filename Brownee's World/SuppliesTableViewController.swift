@@ -19,6 +19,11 @@ class SuppliesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // segue called to return to this view
+    @IBAction func cancelSuppliesSegue(_ segue: UIStoryboardSegue) {
+        performSegue(withIdentifier: "cancelSupplies", sender: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,17 +57,6 @@ class SuppliesTableViewController: UITableViewController {
         // border details for each cell
         cell.layer.borderWidth = 1.0
         cell.layer.cornerRadius = 35
-        
-        // custom background gradient
-        let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
-        let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
-        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLocations: [Float] = [0.0, 1.0]
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColors
-        gradientLayer.locations = gradientLocations as [NSNumber]?
-        gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
 
         return cell
     }

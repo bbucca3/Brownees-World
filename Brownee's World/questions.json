@@ -1,7 +1,7 @@
 {
     "questions": [
     {
-      "title":"Is it a good idea to do research about specific breeds before rescuing?",
+      "title":"Is it a good idea to do research about breeds before rescuing?",
       "answer" : true,
       "explanation":"Doing research about specific breeds will expand your knowledge about all breeds!",
       "category" : "Before Rescuing"
@@ -27,37 +27,37 @@
     {
       "title":"Is it necessary for you to have a name for your dog picked out already?",
       "answer" : false,
-      "explanation":"Not necessarily, consider waiting until you adopt your pet.",
+      "explanation":"Not necessarily, consider waiting until you adopt.",
       "category" : "Before Rescuing"
     }, 
     {
       "title":"When visiting a shelter for the first time is it a good idea to make fast, sudden movements around the dogs?",
       "answer" : false,
-      "explanation":"That's not a good idea, the dogs might be nervous and could be alarmed. Ask for assistance and observe the behavior of the dogs.",
+      "explanation":"That's not a good idea, the dogs might be nervous and could be alarmed. Ask for assistance and observe the behavior of the dogs first.",
       "category" : "Visiting Shelters"
     }, 
     {
       "title":"When visiting a shelter for the first time, should you approach the dogs?",
       "answer" : false,
-      "explanation":"Ask the shelter manager first and observe the rules.",
+      "explanation":"The dogs might be scared so ask the shelter manager first and observe the rules.",
       "category" : "Visiting Shelters"
     },
     {
       "title":"When visiting a shelter should you first allow a dog to sniff you before reaching to pet?",
       "answer" : true,
-      "explanation":"Remember rescue dogs may be nervous. Don't immedietly reach to pet, allow them to sniff first.",
+      "explanation":"Remember rescue dogs may be nervous. Don't immedietly reach to pet, instead allow the dog to sniff you first.",
       "category" : "Visiting Shelters"
     }, 
     {
       "title":"When meeting with a dog for the first time, is it best to pet the dog on the top of the head?",
       "answer" : false,
-      "explanation":"Better places are behind the ears and under the chin.",
+      "explanation":"Remember rescue dogs may be nervous. A good technique is to reach out and pet with your palm up, this also allows the dog to sniff you first to establish trust.",
       "category" : "Visiting Shelters"
     }, 
     {
       "title":"When visiting a shelter for the first time, should you avoid talking in a loud or high-pitched tone?",
       "answer" : true,
-      "explanation":"The dogs might get too excited because of the loud or high-pitched tone.",
+      "explanation":"The dogs might get nervous or too excited because of the loud or high-pitched tone.",
       "category" : "Visiting Shelters"
     },
     {
@@ -75,37 +75,37 @@
     {
       "title":"Is it a good idea to feed your dog food that is grain free and without artificial colors?",
       "answer" : true,
-      "explanation":"That's a good idea.",
+      "explanation":"That's a good idea, make sure to research dog food!",
       "category" : "First Days Together"
     },
     {
       "title":"Should you sometimes give your dog a treat as a reward for good behavior?",
       "answer" : true,
-      "explanation":"Sometimes treats can be used to reinforce good behavior.",
+      "explanation":"Treats can be used to reinforce good behavior!",
       "category" : "First Days Together"
     },
     {
       "title":"Should you allow your dog to walk off leash in public parks?",
       "answer" : false,
-      "explanation":"Not a good idea, check and be aware of local leash laws.",
+      "explanation":"Not a good idea, always check and be aware of local leash laws.",
       "category" : "First Days Together"
     },
     {
       "title":"While walking your dog on a leash, should you allow your dog to pull you toward another dog?",
       "answer" : false,
-      "explanation":"Not a good idea, you should walk your dog and not let your dog walk you.",
+      "explanation":"That's not a good idea, you should walk your dog and not let your dog walk you.",
       "category" : "Meeting Other Dogs"
     },
       {
       "title":"If you notice that your dog is growling at another dog, should you walk in the opposite direction with your dog?",
       "answer" : true,
-      "explanation":"Always try to separate from the situation. Go away from trouble.",
+      "explanation":"Always try to separate from the situation. Go away from trouble if a situation seems tense.",
       "category" : "Meeting Other Dogs"
       },
     {
       "title":"Is it a good idea to let your dog play unsupervised with other dogs?",
       "answer" : false,
-      "explanation":"That's not a good idea, you should be alert to the potential for play to get too rough.",
+      "explanation":"That's not a good idea, you should be alert to the potential for play to get too rough or for accidents to happen.",
       "category" : "Meeting Other Dogs"
     },
     {
@@ -117,13 +117,13 @@
     {
     "title":"If your dog is playing with another dog, should you have a doggy bag available?",
     "answer" : true,
-    "explanation":"Just in case there is an accident, you might want a way to clean up.",
+    "explanation":"Just in case there is an accident, you should have a way to clean up.",
     "category" : "Meeting Other Dogs"
     },
     {
       "title":"Should all capable family members be involved in walking the dog in some way?",
       "answer" : true,
-      "explanation":"If the family members are able, everyone should get involved",
+      "explanation":"If the family members are able, everyone should get involved!",
       "category" : "Family Life"
     },
     {
@@ -147,17 +147,17 @@
     {
       "title":"Should you discipline your dog by using a firm tone of voice?",
       "answer" : true,
-      "explanation":"Use a firm tone of voice to communicate discipline and commands.",
+      "explanation":"It's a good idea to use a firm tone of voice to communicate discipline and commands.",
       "category" : "Family Life"
     },
     {
-      "title":"Is it a good idea to take your dog on a short drive before driving with your dog for a longer distance?",
+      "title":"Is it a good idea to take your dog on a short drive before driving with your dog for a longer distance for the first time?",
       "answer" : true,
       "explanation":"Use shorter drives as practice for longer drives.",
       "category" : "Travelling"
     },
     {
-      "title":"Should you make sure that your dog is secure in the backseat of the car while driving?",
+      "title":"Should you make sure that your dog stays in the backseat of the car while driving?",
       "answer" : true,
       "explanation":"That's a good idea. You should not allow your dog to sit on your lap in the front seat of the car.",
       "category" : "Travelling"
@@ -171,13 +171,13 @@
     {
       "title":"Should you keep water in your car just in case your dog needs to hydrate?",
       "answer" : true,
-      "explanation":"That's a good idea! You might need water after a long drive (followed a long walk).",
+      "explanation":"Your dog might need water during a long drive.",
       "category" : "Travelling"
     },
     {
       "title":"When travelling with your dog on an airplane, is it a good idea to have your dog's ID visible?",
       "answer" : true,
-      "explanation":"That's a good idea because the airlines identify and comfort your do.",
+      "explanation":"That's a good idea because the airline workers identify and comfort your dog.",
       "category" : "Travelling"
     },
       {
@@ -189,19 +189,19 @@
       {
         "title":"Is it safe to feed your dog peanut butter?",
         "answer" : true,
-        "explanation":"That's a good idea!",
+        "explanation":"That's a good idea, most dogs love peanut butter!",
         "category" : "Food Safety"
       },
       {
         "title":"Is it safe to feed your dog chocolate?",
         "answer" : false,
-        "explanation":"That's not a good idea! Chocolate is toxic to dogs.",
+        "explanation":"That's not a good idea! Chocolate is toxic to dogs!",
         "category" : "Food Safety"
       },
       {
         "title":"Is it safe to feed your dog garlic?",
         "answer" : false,
-        "explanation":"That's not a good idea! Garlic is toxis to dogs.",
+        "explanation":"That's not a good idea! Garlic is toxis to dogs!",
         "category" : "Food Safety"
       },
       {
@@ -213,7 +213,7 @@
       {
         "title":"Is it a good idea to store your household cleaning products out of reach from your dog?",
         "answer" : true,
-        "explanation":"That's a good idea because household cleaning products can be poisonous.",
+        "explanation":"That's a good idea because household cleaning products can be poisonous!",
         "category" : "Home Safety"
       },
       {
@@ -225,7 +225,7 @@
       {
         "title":"Is it a good idea to allow your dog to rummage through the trash?",
         "answer" : false,
-        "explanation":"That's not a good idea because food waste could make your dog sick.",
+        "explanation":"That's not a good idea because certain food waste could make your dog sick.",
         "category" : "Home Safety"
       },
       {
@@ -241,33 +241,33 @@
         "category" : "Home Safety"
       },
       {
-        "title":"Is it a good idea for a long hair dog that sheds to be groomed several times per year (either at home or professional)?",
+        "title":"Is it a good idea for a dog with long hair that sheds to be groomed several times per year (professional or at home)?",
         "answer" : true,
         "explanation":"That's a good idea because their fur will become otherwise unmanageable and could lead to further complications!",
         "category" : "Commitments"
       },
       {
-        "title":"Is it a good idea for a long hair nonshedding dog to be groomed several times per year?",
+        "title":"Is it a good idea for a nonshedding dog with long hair to be groomed a few times per year?",
         "answer" : true,
-        "explanation":"That's a good idea because otherwise their fur will become unmanageable and could lead to further complications! Short hair dogs benefit from grooming too.",
+        "explanation":"That's a good idea because otherwise their fur will become unmanageable and could lead to further complications. Short hair dogs benefit from grooming too.",
         "category" : "Commitments"
       },
       {
-        "title":"Is it a good idea to have a veterinarian to contact?",
+        "title":"Is it a good idea to have a veterinarian to contact just in case of emergencies?",
         "answer" : true,
         "explanation":"That's a good idea!",
         "category" : "Commitments"
       },
       {
-        "title":"Is it a good idea to have an emergency fund for unexpected veterinary visits?",
+        "title":"Is it a good idea to have an emergency fund set aside for unexpected veterinary visits?",
         "answer" : true,
-        "explanation":"That's a good idea!",
+        "explanation":"Yes that's a good idea!",
         "category" : "Commitments"
       },
       {
         "title":"Is it a good idea to leave your dog home alone while you go on vacation for a few days?",
         "answer" : false,
-        "explanation":"That's not a good idea! Look into boarding or having someone come watch your dog.",
+        "explanation":"That's not a good idea! Consider boarding or having someone come watch your dog.",
         "category" : "Commitments"
       }
   ]

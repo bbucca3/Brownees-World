@@ -24,8 +24,34 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     var pinsArray: [MKPointAnnotation] = []
     
     @IBAction func signUpButton(_ sender: UIButton) {
-        if let requestUrl = URL(string: "https://rescuegroups.org/sign-up/") {
-            UIApplication.shared.openURL(requestUrl)
+        
+        let customIcon:UIImage! = UIImage(named: "dog_house_tab_filled")
+        DispatchQueue.main.async { [unowned self] in
+            let alertView = JSSAlertView().show(
+                self,
+                title: "Open RescueGroups Sign Up Link",
+                text: "Follow the instructions via the link on the next page to register a shelter or rescue organization on the map",
+                buttonText: "Open Link",
+                cancelButtonText: "Close",
+                color: UIColorFromHex(0xFFF7F0, alpha: 0.95),
+                iconImage: customIcon)
+            alertView.addAction(self.visitRescueGroups)
+            alertView.setTitleFont("Helvetica")
+            alertView.setTextFont("Helvetica")
+            alertView.setButtonFont("Helvetica")
+        }
+        
+    }
+    // function to open rescue groups sign up website
+    func visitRescueGroups() {
+        guard let url = URL(string: "https://rescuegroups.org/sign-up/") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
         }
     }
     
@@ -35,18 +61,20 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         mapView.removeAnnotations(mapView.annotations)
         self.pinsArray.removeAll()
         // call function to check zipcode
-        print("Search Button Pressed")
-        textFieldShouldReturn(zipSearch)
+        // print("Search Button Pressed")
+        _ = textFieldShouldReturn(zipSearch)
     }
     
     @IBAction func clearMapButton(_ sender: UIButton) {
         OperationQueue.main.cancelAllOperations()
-        // remove all annotations from map and clear pinsArray
+        // removes all annotations from map and clear pinsArray
         mapView.removeAnnotations(mapView.annotations)
         self.pinsArray.removeAll()
         // resets map to North America region
         let regionNorthAmerica = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(46.828, -101.759), 4900000, 4900000))
         mapView.region = regionNorthAmerica
+        // clears zipcode entry field
+        zipSearch.text = ""
     }
     
     override func viewDidLoad() {
@@ -76,10 +104,6 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         // Dispose of any resources that can be recreated.
     }
     
-    // segue called to return to this view
-    @IBAction func cancelGetInvolvedSegue(_ segue: UIStoryboardSegue) {        
-    }
-    
     // func that checks zipcode text for 5 digits exactly
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // cast text from textfield as an int otherwise string will be nil
@@ -90,15 +114,15 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             DispatchQueue.main.async { [unowned self] in
                 JSSAlertView().show(
                     self,
-                    title: "Error!",
-                    text: "Please Enter 5 Digit Zip Code.",
+                    title: "Error",
+                    text: "Please Enter a 5 Digit Zipcode",
                     buttonText: "Ok",
-                    color: UIColorFromHex(0x942522, alpha: 1))
+                    color: UIColorFromHex(0xED3F3B, alpha: 0.65))
             }
         }
         else {
             // function to drop keyboard on return
-            textFieldShouldClear(zipSearch)
+            _ = textFieldShouldClear(zipSearch)
             // function to send zipcode to API call
             requestSheltersForZipcode(textField.text!)
         }
@@ -114,7 +138,6 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     func requestSheltersForZipcode(_ zipcode: String) {
         // remove all annotations from map and clear pinsArray
         mapView.removeAnnotations(mapView.annotations)
-        self.pinsArray.removeAll()
         
         let resultLimit: String = "50"
         var radiusInput: String = "0"
@@ -175,7 +198,20 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                     //print(value)
                     let json = JSON(value)
                     let resultsDictionary = json.dictionaryValue
-                    print(resultsDictionary)
+                    print("RESULTS: ", resultsDictionary)
+                    
+                    // checks for errors within json response object before populating dictionary of search results
+                    if( resultsDictionary["foundRows"] == 0 || resultsDictionary["status"] == "error" ) {
+                        // show error message modal
+                        DispatchQueue.main.async { [unowned self] in
+                            JSSAlertView().show(
+                                self,
+                                title: "0 Results Found",
+                                text: "Please try searching with another zipcode.",
+                                buttonText: "Ok",
+                                color: UIColorFromHex(0xED3F3B, alpha: 0.65))
+                        }
+                    }
                     
                     if let dataDictionary = resultsDictionary["data"]?.dictionaryValue {
                         
@@ -222,12 +258,12 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                                         DispatchQueue.main.async() { [unowned self] in
                                             JSSAlertView().show(
                                                 self,
-                                                title: "The operation couldn’t be completed.",
-                                                text: "Location Failed or Search Overload (Please Wait 60 seconds Before Searching Again).",
+                                                title: "Error",
+                                                text: "Search Overload (Please Wait 60 seconds Before Searching Again).",
                                                 buttonText: "Ok",
-                                                color: UIColorFromHex(0x942522, alpha: 1))
+                                                color: UIColorFromHex(0x942522, alpha: 0.85))
                                         }
-                                        print(error!)
+                                        print("error inside geoCoder", error!)
                                         return
                                     }
                                     
@@ -244,7 +280,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                                             pointAnnotation.title = org.name
                                             
                                             if (org.website == "http://" || org.website == "" || org.website == " "){
-                                                pointAnnotation.subtitle = "No Website Entered"
+                                                pointAnnotation.subtitle = "No Website Found"
                                             }
                                             else {
                                                 pointAnnotation.subtitle = org.website
@@ -260,11 +296,8 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                                     }
                                     semaphore.signal()
                                 })
-                                
-//                                let delayTime = DispatchTime.now()
-//                                let d_time = DispatchTime.now()
                                 // replace d_time with FOREVER
-                                semaphore.wait(timeout: DispatchTime.distantFuture)
+                                _ = semaphore.wait(timeout: DispatchTime.distantFuture)
                                 
                             })
                             // completionOperation dependent on each operation
@@ -319,25 +352,35 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     }
     
     
-    // function that creates modal alert by tapping callout disclosure
+    // function that creates modal when tapping on callout disclosure
     func mapView(_ mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         // specific annotation callout control tapped
         if control == annotationView.rightCalloutAccessoryView {
-            // print("Disclosure Pressed!")
             let title = annotationView.annotation?.title ?? ""
-            let text = annotationView.annotation?.subtitle ?? ""
+            var text = annotationView.annotation?.subtitle ?? ""
             
-            func myCancelCallback() {
-                if let requestUrl = URL(string: text!) {
-                    UIApplication.shared.openURL(requestUrl)
+            // function that opens website
+            func visitwebSiteCallback() {
+                // check for http prefix
+                if ( text?[(text?.startIndex)!] != "h") {
+                    text = "http://www"+text!
+                }
+                
+                guard let url = URL(string: text!) else {
+                    return //be safe
+                }
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
                 }
             }
             
-            // sets icon for modal
+            // sets custom icon for modal
             let customIcon:UIImage! = UIImage(named: "dog_house_tab_filled")
-            
-            if(text == "No Website Entered"){
+            // modal for no website
+            if(text == "No Website Found"){
                 // Modal view for each org detail disclosure with website
                 DispatchQueue.main.async { [unowned self] in
                     let alertView = JSSAlertView().show(
@@ -352,6 +395,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                     alertView.setButtonFont("Helvetica")
                 }
             }
+            // modal for website
             else {
                 // Modal view for each org detail disclosure with website
                 DispatchQueue.main.async { [unowned self] in
@@ -359,14 +403,14 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                         self,
                         title: title ?? "",
                         text: text ?? "",
-                        buttonText: "Close",
-                        cancelButtonText: "Website", // two-button alert
+                        buttonText: "Open Link",
+                        cancelButtonText: "Close", // two-button alert
                         color: UIColorFromHex(0xFFF7F0, alpha: 0.95),
                         iconImage: customIcon)
                     alertView.setTitleFont("Helvetica")
                     alertView.setTextFont("Helvetica")
                     alertView.setButtonFont("Helvetica")
-                    alertView.addCancelAction(myCancelCallback)
+                    alertView.addAction(visitwebSiteCallback)
                 }
             }
         }

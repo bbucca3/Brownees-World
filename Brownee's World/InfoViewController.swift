@@ -10,11 +10,16 @@ import JSSAlertView
 
 class InfoViewController: UIViewController {
 
-    // donate to animal assistance
     @IBAction func donateButton(_ sender: AnyObject) {
-        // implicit unwrap url open in safari
-        if let requestUrl = URL(string: "http://animalassistance.org/donate.html") {
-            UIApplication.shared.openURL(requestUrl as URL)
+        
+        guard let url = URL(string: "http://www.animalassistance.org/donations-1/") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
         }
         
     }

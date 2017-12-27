@@ -12,37 +12,27 @@ import Foundation
 import JSSAlertView
 
 class AboutViewController: UIViewController, PaperOnboardingDataSource {
-
-    @IBOutlet weak var skipButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //  paper onboarding
         let onboarding = PaperOnboarding(itemsCount: 3)
         onboarding.dataSource = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(onboarding)
- 
-        self.view.addSubview(skipButton)
+        self.view.addSubview(onboarding)
         
-        // add constraints
+        // add constraints for onboarding
         for attribute: NSLayoutAttribute in [.left, .right, .top, .bottom] {
-            let constraint = NSLayoutConstraint(item: onboarding, attribute: attribute,relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0)
+            let constraint = NSLayoutConstraint(item: onboarding, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0)
             view.addConstraint(constraint)
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func onboardingWillTransitonToIndex(_ index: Int) {
-        // skipButton.hidden = index == 2 ? false : true
-    }
-    
-    func onboardingDidTransitonToIndex(_ index: Int) {
-        
     }
     // func for onboarding
     func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
@@ -53,25 +43,17 @@ class AboutViewController: UIViewController, PaperOnboardingDataSource {
         // array: main image, title text, description text, tab image, background color,
         // title text color, description text color, title font, description font
         return[
-            ("browneeOnboard", "Brownee's World", "Please swipe right", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("footOnboard", "Education", "Engage in questions about the life of a rescue dog, and dogs in general. Swipe right to see more information.", "dog_footprint_tab", UIColorFromHex(0xFDF1E6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
-            ("houseOnboard", "Get Involved", "Search for animal shelters/rescue organizations within a 5, 10, 15, or 20 mile radius from any US zipcode. Please allow a moment for search to load.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
+            ("browneeOnboard", "Brownee's World", "Swipe right to see more information or swipe left to exit.", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            
+            ("footOnboard", "Education", "Answer questions about a dog's life before and after being rescued from a shelter. Swipe right to see more information.", "dog_footprint_tab", UIColorFromHex(0xFAD6D5), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            
+            ("houseOnboard", "Search", "Search for animal shelters and rescue organizations by any 5 digit US zipcode. View a list of common items to donate to a shelter. Swipe right to exit.", "dog_house_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
             ][index]
     }
     // func for number of onboarding pages
     func onboardingItemsCount() -> Int {
         return 3
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

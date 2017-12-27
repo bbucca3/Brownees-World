@@ -127,7 +127,7 @@ class QuestionViewController: UIViewController {
                 title: "Finished",
                 text: "Good job!",
                 buttonText: "Ok",
-                color: UIColorFromHex(0xFFF7F0, alpha: 1),
+                color: UIColorFromHex(0xFFF7F0, alpha: 0.85),
                 iconImage: customIcon)
             alertView.addAction(self.finishedSegue)
             alertView.setTitleFont("Helvetica")
