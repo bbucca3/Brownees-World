@@ -8,6 +8,4 @@
 
 There is a search feature to look for rescue organizations and animal shelters via any US zip code. You can also view a list of items most shelters and rescue organizations will accept as donations. Most places are (almost) always looking for donations of supplies and/or possibe volunteers.
 
-
-
-Brownee's World button graphics and in-app icons attributed to Icons8.
+Brownee's World button graphics attributed to Icons8.
