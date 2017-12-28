@@ -22,11 +22,11 @@ class SuppliesTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backToInfo(_ sender: Any) {        
-        print("Hello from backToInfo!")
+    // function for back button press
+    @IBAction func backToInfo(_ sender: Any) {
+        // print("Hello from backToInfo press!")
         performSegue(withIdentifier: "unwindToInfo", sender: self)
     }
     
