@@ -289,42 +289,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vL8-YO-9fV" userLabel="donateButton">
-                                <rect key="frame" x="37" y="369" width="300" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="donateAnimalAssistanceButton"/>
-                                <connections>
-                                    <action selector="donateButton:" destination="3T8-vH-qXj" eventType="touchUpInside" id="a4v-rx-8qy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ok-Dd-zkU" userLabel="donateItems Button">
-                                <rect key="frame" x="37" y="427" width="300" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="showSuppliesButton"/>
-                                <connections>
-                                    <segue destination="0VU-wS-eCA" kind="show" id="cH1-ST-I7g"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDS-Df-vR7">
-                                <rect key="frame" x="67" y="86" width="240" height="275"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1HE-zZ-p4B">
+                                <rect key="frame" x="37" y="460" width="300" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vL8-YO-9fV" userLabel="donateButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <state key="normal" image="donateAnimalAssistanceButton"/>
+                                        <connections>
+                                            <action selector="donateButton:" destination="3T8-vH-qXj" eventType="touchUpInside" id="a4v-rx-8qy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ok-Dd-zkU" userLabel="donateItems Button">
+                                        <rect key="frame" x="0.0" y="55" width="300" height="45"/>
+                                        <state key="normal" image="showSuppliesButton"/>
+                                        <connections>
+                                            <segue destination="0VU-wS-eCA" kind="show" id="cH1-ST-I7g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRH-XW-Mo1" userLabel="registerShelter Button">
+                                        <rect key="frame" x="0.0" y="105" width="300" height="45"/>
+                                        <state key="normal" image="signUpButton"/>
+                                        <connections>
+                                            <action selector="registerShelterButton:" destination="3T8-vH-qXj" eventType="touchUpInside" id="ur1-7F-uAw"/>
+                                            <action selector="signUpButton:" destination="p4a-Th-fg6" eventType="touchUpInside" id="X31-r3-qM0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDS-Df-vR7">
+                                <rect key="frame" x="67" y="142" width="240" height="310"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">Brownee's World was inspired by Animal Assistance 501c3 and Brownee the Plain Brown Dog LLC. The search for rescue organizations and shelters is powered by the RescueGroups.org API.  Special thanks to Sinclair Toffa, Teressa Eid, Daniel Haaser, Szi Gábor, Marta González, Guille Garcia and Jacob Lichtstrahl @ Make School Summer Academy NYC 2016.  Button graphics attributed to Icons8.  </mutableString>
+                                <string key="text">Brownee's World was inspired by Animal Assistance 501c3 and Brownee the Plain Brown Dog LLC. The search for rescue organizations and shelters is powered by the RescueGroups.org API.  Special thanks to Sinclair Toffa, Teressa Eid, Daniel Haaser, Szi Gábor, Marta González, Guille Garcia and Jacob Lichtstrahl @ Make School Summer Academy NYC 2016.  Button graphics attributed to Icons8.  </string>
                                 <color key="textColor" red="0.26666666666666666" green="0.17254901960784313" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRH-XW-Mo1" userLabel="registerShelter Button">
-                                <rect key="frame" x="37" y="480" width="300" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="signUpButton"/>
-                                <connections>
-                                    <action selector="registerShelterButton:" destination="3T8-vH-qXj" eventType="touchUpInside" id="ur1-7F-uAw"/>
-                                    <action selector="signUpButton:" destination="p4a-Th-fg6" eventType="touchUpInside" id="X31-r3-qM0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96078431372549022" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jDS-Df-vR7" firstAttribute="top" secondItem="Qhg-ki-NFT" secondAttribute="bottom" constant="122" id="N6S-LM-9fO"/>
+                            <constraint firstItem="jDS-Df-vR7" firstAttribute="centerX" secondItem="EwZ-b2-MxG" secondAttribute="centerX" id="RVn-Ye-4WE"/>
+                            <constraint firstItem="dgU-CA-bp8" firstAttribute="top" secondItem="1HE-zZ-p4B" secondAttribute="bottom" constant="8" id="TSt-wn-mfK"/>
+                            <constraint firstItem="1HE-zZ-p4B" firstAttribute="top" secondItem="jDS-Df-vR7" secondAttribute="bottom" constant="8" symbolic="YES" id="hR5-4U-15O"/>
+                            <constraint firstItem="jDS-Df-vR7" firstAttribute="leading" secondItem="EwZ-b2-MxG" secondAttribute="leadingMargin" constant="51" id="nay-Zr-o3e"/>
+                            <constraint firstItem="jDS-Df-vR7" firstAttribute="centerX" secondItem="1HE-zZ-p4B" secondAttribute="centerX" id="s10-Z1-RTp"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="helpTab" selectedImage="helpTabFilled" id="xyk-W1-akK" userLabel="Info">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="1"/>
