@@ -1,8 +1,8 @@
 # Brownee's World
 
-### Description
-
 ![Brownee](brownee.png)
+
+### Description
 
 [Brownee’s World](https://itunes.apple.com/us/app/id1143337193) connects people passionate about rescue dogs with places that best provide support for rescue dogs. [Brownee’s World](https://itunes.apple.com/us/app/id1143337193) allows you to engage in a question-based game to learn more about the adoption process and life of a rescue dog, and a dog's life in general. Questions are designed for all ages in a way to prompt discussion about personal responsibilities when interacting with rescue dogs and dogs in general. 
 
