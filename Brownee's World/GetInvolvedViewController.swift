@@ -25,34 +25,6 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     
     @IBAction func signUpButton(_ sender: UIButton) {
         
-        let customIcon:UIImage! = UIImage(named: "dog_house_tab_filled")
-        DispatchQueue.main.async { [unowned self] in
-            let alertView = JSSAlertView().show(
-                self,
-                title: "Open RescueGroups Sign Up Link",
-                text: "Follow the instructions via the link on the next page to register a shelter or rescue organization on the map",
-                buttonText: "Open Link",
-                cancelButtonText: "Close",
-                color: UIColorFromHex(0xFFF7F0, alpha: 0.95),
-                iconImage: customIcon)
-            alertView.addAction(self.visitRescueGroups)
-            alertView.setTitleFont("Helvetica")
-            alertView.setTextFont("Helvetica")
-            alertView.setButtonFont("Helvetica")
-        }
-        
-    }
-    // function to open rescue groups sign up website
-    func visitRescueGroups() {
-        guard let url = URL(string: "https://rescuegroups.org/sign-up/") else {
-            return //be safe
-        }
-        
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
     }
     
     @IBAction func searchMapButton(_ sender: UIButton) {

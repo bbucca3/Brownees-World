@@ -22,6 +22,7 @@ class SuppliesTableViewController: UITableViewController {
     
     // segue called to return to this view
     @IBAction func cancelSuppliesSegue(_ segue: UIStoryboardSegue) {
+        print("Hello from cancelSuppliesSegue!")
         performSegue(withIdentifier: "cancelSupplies", sender: self)
     }
 
