@@ -311,13 +311,6 @@
                                     <action selector="donateButton:" destination="3T8-vH-qXj" eventType="touchUpInside" id="a4v-rx-8qy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpf-7Y-IAH" userLabel="homeButton">
-                                <rect key="frame" x="37" y="28" width="300" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="returnEducationButton">
-                                    <color key="titleColor" red="0.26666666666666666" green="0.17254901960784313" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ok-Dd-zkU" userLabel="donateItems Button">
                                 <rect key="frame" x="37" y="427" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1162,7 +1155,6 @@ AHIDcghyEHITciVyKHItAAAAAAAAAgEAAAAAAAAAPgAAAAAAAAAAAAAAAAAAci8
         </image>
         <image name="newHomeTab" width="33" height="34"/>
         <image name="newHomeTabFilled" width="32" height="32"/>
-        <image name="returnEducationButton" width="300" height="50"/>
         <image name="searchMapButton" width="160" height="45"/>
         <image name="showSuppliesButton" width="300" height="45"/>
         <image name="signUpButton" width="300" height="45"/>
