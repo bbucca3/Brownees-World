@@ -29,7 +29,10 @@ class SuppliesTableViewController: UITableViewController {
         // print("Hello from backToInfo press!")
         performSegue(withIdentifier: "unwindToInfo", sender: self)
     }
-    
+    // function for home button press
+    @IBAction func infoToHome(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToHome", sender: self)
+    }
 
     // MARK: - Table view data source
 
