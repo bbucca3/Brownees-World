@@ -16,13 +16,13 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
         super.viewDidLoad()
         
         // swipe detection        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        self.view.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-        self.view.addGestureRecognizer(swipeLeft)
+//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
+//        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+//        self.view.addGestureRecognizer(swipeRight)
+//        
+//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
+//        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+//        self.view.addGestureRecognizer(swipeLeft)
         
         // background color gradient
         let topColor = hexStringToUIColor("FFF7F0")
@@ -55,25 +55,25 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
     
     // swipe gesture detect
     
-    func respondToSwipeGesture(_ gesture: UIGestureRecognizer)
-    {
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer
-        {
-            switch swipeGesture.direction
-            {
-            case UISwipeGestureRecognizerDirection.right:
-                //write your logic for right swipe
-                print("Swiped right")
-                
-            case UISwipeGestureRecognizerDirection.left:
-                //write your logic for left swipe
-                print("Swiped left")
-                
-            default:
-                break
-            }
-        }
-    }
+//    func respondToSwipeGesture(_ gesture: UIGestureRecognizer)
+//    {
+//        if let swipeGesture = gesture as? UISwipeGestureRecognizer
+//        {
+//            switch swipeGesture.direction
+//            {
+//            case UISwipeGestureRecognizerDirection.right:
+//                //write your logic for right swipe
+//                print("Swiped right")
+//                
+//            case UISwipeGestureRecognizerDirection.left:
+//                //write your logic for left swipe
+//                print("Swiped left")
+//                
+//            default:
+//                break
+//            }
+//        }
+//    }
     // button links to tab bar index
     @IBAction func educationButton(_ sender: UIButton) {
         tabBarController?.selectedIndex = 1
@@ -101,10 +101,6 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
             )
-    }
-    
-    @IBAction func homeSegue(_ segue: UIStoryboardSegue) {
-        
     }
     
 }

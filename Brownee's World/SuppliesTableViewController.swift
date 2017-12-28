@@ -19,17 +19,17 @@ class SuppliesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    // segue called to return to this view
-    @IBAction func cancelSuppliesSegue(_ segue: UIStoryboardSegue) {
-        print("Hello from cancelSuppliesSegue!")
-        performSegue(withIdentifier: "cancelSupplies", sender: self)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func backToInfo(_ sender: Any) {        
+        print("Hello from backToInfo!")
+        performSegue(withIdentifier: "unwindToInfo", sender: self)
+    }
+    
 
     // MARK: - Table view data source
 

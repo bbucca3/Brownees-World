@@ -158,13 +158,17 @@
                     <toolbarItems>
                         <barButtonItem image="backButton" width="300" id="fks-2v-rtB">
                             <connections>
-                                <segue destination="LSv-WY-jpW" kind="unwind" identifier="cancelSupplies" unwindAction="cancelSuppliesSegue:" id="6vF-8N-Z6N"/>
+                                <action selector="backToInfo:" destination="gag-Ad-Uqk" id="GKa-jC-qe5"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="QR7-WA-WV3"/>
+                    <connections>
+                        <segue destination="RfU-gN-n1T" kind="unwind" identifier="unwindToInfo" unwindAction="unwindToInfoWithSegue:" id="g2Z-ES-zGF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vjz-xE-kbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RfU-gN-n1T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1306" y="1861"/>
         </scene>
@@ -325,7 +329,6 @@
                     <tabBarItem key="tabBarItem" title="Help" image="helpTab" selectedImage="helpTabFilled" id="xyk-W1-akK" userLabel="Help"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91B-jh-pmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="LSv-WY-jpW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1030" y="1010"/>
         </scene>
