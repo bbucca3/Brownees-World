@@ -63,45 +63,27 @@
                                 </subviews>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P98-vU-sFc">
-                                <rect key="frame" x="0.0" y="167" width="375" height="349"/>
+                                <rect key="frame" x="0.0" y="167" width="375" height="443"/>
                             </mapView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="FVd-2x-IMn">
-                                <rect key="frame" x="37" y="518" width="300" height="92"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNm-QN-KEz" userLabel="registerShelter Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
-                                        <state key="normal" image="signUpButton"/>
-                                        <connections>
-                                            <action selector="signUpButton:" destination="p4a-Th-fg6" eventType="touchUpInside" id="Bla-AA-eCs"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMA-eK-WTm" userLabel="donateItems Button">
-                                        <rect key="frame" x="0.0" y="47" width="300" height="45"/>
-                                        <state key="normal" image="showSuppliesButton"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="P98-vU-sFc" firstAttribute="top" secondItem="sID-T2-Ki0" secondAttribute="bottom" constant="2" id="12b-dT-9uL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sID-T2-Ki0" secondAttribute="trailing" constant="5" id="1Gx-d1-u5k"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="P98-vU-sFc" secondAttribute="trailing" constant="-16" id="1lU-AU-mPN"/>
                             <constraint firstItem="5PA-Qo-2fz" firstAttribute="top" secondItem="diR-NK-ShZ" secondAttribute="bottom" constant="5" id="3wX-GB-gLB"/>
                             <constraint firstItem="5PA-Qo-2fz" firstAttribute="leading" secondItem="xFG-1z-YTe" secondAttribute="leadingMargin" id="6W6-NO-fxe"/>
+                            <constraint firstItem="P98-vU-sFc" firstAttribute="trailing" secondItem="diR-NK-ShZ" secondAttribute="trailing" id="9cN-eM-MRF"/>
                             <constraint firstItem="diR-NK-ShZ" firstAttribute="top" secondItem="bXe-7a-CCN" secondAttribute="bottom" constant="8" symbolic="YES" id="Fh4-bC-rjo"/>
                             <constraint firstItem="bXe-7a-CCN" firstAttribute="top" secondItem="XPe-jM-uS9" secondAttribute="bottom" id="G5I-g5-xFt"/>
-                            <constraint firstItem="oQn-Eg-3Iy" firstAttribute="top" secondItem="FVd-2x-IMn" secondAttribute="bottom" constant="8" id="GD1-Y1-Kzb"/>
-                            <constraint firstItem="P98-vU-sFc" firstAttribute="leading" secondItem="xFG-1z-YTe" secondAttribute="leadingMargin" constant="-16" id="GIO-fz-BSH"/>
+                            <constraint firstItem="P98-vU-sFc" firstAttribute="top" secondItem="sID-T2-Ki0" secondAttribute="bottom" constant="2" id="Kel-wa-pHi"/>
                             <constraint firstItem="bXe-7a-CCN" firstAttribute="leading" secondItem="xFG-1z-YTe" secondAttribute="leadingMargin" constant="-16" id="OYP-Nb-dDM"/>
                             <constraint firstItem="sID-T2-Ki0" firstAttribute="leading" secondItem="xFG-1z-YTe" secondAttribute="leadingMargin" constant="5" id="QQI-3a-Tmq"/>
                             <constraint firstItem="diR-NK-ShZ" firstAttribute="leading" secondItem="xFG-1z-YTe" secondAttribute="leading" id="WPC-Ls-Qy4"/>
-                            <constraint firstItem="FVd-2x-IMn" firstAttribute="top" secondItem="P98-vU-sFc" secondAttribute="bottom" constant="2" id="dC5-LY-OMO"/>
-                            <constraint firstItem="FVd-2x-IMn" firstAttribute="centerX" secondItem="P98-vU-sFc" secondAttribute="centerX" id="eZH-rI-N1T"/>
+                            <constraint firstItem="P98-vU-sFc" firstAttribute="leading" secondItem="diR-NK-ShZ" secondAttribute="leading" id="bb1-Av-YrM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="diR-NK-ShZ" secondAttribute="trailing" constant="-16" id="hMN-bn-EbK"/>
                             <constraint firstItem="5PA-Qo-2fz" firstAttribute="trailing" secondItem="sID-T2-Ki0" secondAttribute="trailing" id="kEv-tj-QtH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bXe-7a-CCN" secondAttribute="trailing" constant="-16" id="oFO-hA-3Vq"/>
                             <constraint firstItem="sID-T2-Ki0" firstAttribute="top" secondItem="5PA-Qo-2fz" secondAttribute="bottom" constant="8" symbolic="YES" id="sEv-Qz-XJP"/>
+                            <constraint firstItem="oQn-Eg-3Iy" firstAttribute="top" secondItem="P98-vU-sFc" secondAttribute="bottom" constant="8" symbolic="YES" id="slC-55-44F"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -116,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3O-A6-SqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="1010"/>
+            <point key="canvasLocation" x="303.19999999999999" y="1009.7451274362819"/>
         </scene>
         <!--Supplies Table View Controller-->
         <scene sceneID="4Kf-r8-f9j">
@@ -323,7 +305,7 @@
                                 <rect key="frame" x="67" y="86" width="240" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">This app was inspired by Animal Assistance 501c3 and Brownee the Plain Brown Dog LLC. The search for rescue organizations and shelters is powered by the RescueGroups.org API.  Special thanks to Sinclair Toffa, Teressa Eid, Daniel Haaser, Szi Gábor, Marta González, Guille Garcia and Jacob Lichtstrahl @ Make School Summer Academy NYC 2016.  Button graphics attributed to Icons8.  </mutableString>
+                                <mutableString key="text">Brownee's World was inspired by Animal Assistance 501c3 and Brownee the Plain Brown Dog LLC. The search for rescue organizations and shelters is powered by the RescueGroups.org API.  Special thanks to Sinclair Toffa, Teressa Eid, Daniel Haaser, Szi Gábor, Marta González, Guille Garcia and Jacob Lichtstrahl @ Make School Summer Academy NYC 2016.  Button graphics attributed to Icons8.  </mutableString>
                                 <color key="textColor" red="0.26666666666666666" green="0.17254901960784313" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

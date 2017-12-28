@@ -23,10 +23,6 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     // array of annotations for mapView
     var pinsArray: [MKPointAnnotation] = []
     
-    @IBAction func signUpButton(_ sender: UIButton) {
-        
-    }
-    
     @IBAction func searchMapButton(_ sender: UIButton) {
         OperationQueue.main.cancelAllOperations()
         // remove all annotations from map and clear pinsArray
@@ -257,13 +253,8 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                                             else {
                                                 pointAnnotation.subtitle = org.website
                                             }
-                                                                                    
                                             // append newly created annotation to array.
-                                            // this specific one was in Canada for some reason
-                                            
                                                 self.pinsArray.append(pointAnnotation)
-                                            
-                                            
                                         }
                                     }
                                     semaphore.signal()
@@ -325,6 +316,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     
     
     // function that creates modal when tapping on callout disclosure
+    // modal contains shelter name and possible website
     func mapView(_ mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         // specific annotation callout control tapped
