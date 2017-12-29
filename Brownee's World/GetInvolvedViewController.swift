@@ -72,7 +72,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         // Dispose of any resources that can be recreated.
     }
     
-    // func that checks zipcode text for 5 digits exactly
+    // func checks ZIP code text for 5 digits exact
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // cast text from textfield as an int otherwise string will be nil
         let enteredText = Int(textField.text!)
@@ -83,7 +83,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                 JSSAlertView().show(
                     self,
                     title: "Error",
-                    text: "Please Enter a 5 Digit Zipcode",
+                    text: "Please Enter a 5 Digit ZIP Code",
                     buttonText: "Ok",
                     color: UIColorFromHex(0xED3F3B, alpha: 0.65))
             }
