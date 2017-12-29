@@ -345,6 +345,9 @@
                     <tabBarItem key="tabBarItem" title="Support" image="newSupportTab" selectedImage="newSupportTabFilled" id="xyk-W1-akK">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="1"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="supportText" destination="jDS-Df-vR7" id="8VL-JB-Nua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91B-jh-pmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

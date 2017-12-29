@@ -10,8 +10,12 @@ import JSSAlertView
 
 class InfoViewController: UIViewController {
     
+    @IBOutlet weak var supportText: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // sets scrolling text view to top
+        supportText.isScrollEnabled = false
         // custom background gradient
         let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
         let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
@@ -24,9 +28,14 @@ class InfoViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // prevents auto initial scroll to bottom
+        supportText.isScrollEnabled = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func donateButton(_ sender: AnyObject) {
