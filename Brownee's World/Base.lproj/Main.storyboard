@@ -110,7 +110,7 @@
                         <color key="backgroundColor" red="0.92549019607843142" green="0.85490196078431369" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="6" indentationWidth="10" reuseIdentifier="cell" rowHeight="95" id="VLZ-45-1wK" customClass="SuppliesTableViewCell" customModule="Brownees_World" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VLZ-45-1wK" id="Ipf-cP-ezh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
@@ -161,7 +161,9 @@
                                 <action selector="infoToHome:" destination="gag-Ad-Uqk" id="f2Z-z8-Mu0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OXH-mS-8Vh"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OXH-mS-8Vh">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem image="backButton" id="fks-2v-rtB" userLabel="backBarButtonItem">
                             <connections>
                                 <action selector="backToInfo:" destination="gag-Ad-Uqk" id="GKa-jC-qe5"/>
