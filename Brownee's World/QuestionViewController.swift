@@ -140,6 +140,4 @@ class QuestionViewController: UIViewController {
         self.performSegue(withIdentifier: "cancelSegue", sender: self)
         return
     }
-    
-
 }

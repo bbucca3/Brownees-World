@@ -45,8 +45,6 @@ class TriviaViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        //comment 
     }
     
     // load json data from local file
@@ -56,9 +54,8 @@ class TriviaViewController: UIViewController {
             return []
         }
         
-        
+        // Enter SwiftyJSON
         let jsonData = try? Data(contentsOf: jsonURL)
-        // Enter SwiftyJSON!
         // questionsData now contains a JSON object representing all the data in the JSON file.
         let questionsData = JSON(data: jsonData! as Data)
         // loop over questionsData.arrayValue
@@ -84,7 +81,7 @@ class TriviaViewController: UIViewController {
         var foodSafeArray = [Question]()
         var commitmentsArray = [Question]()
         
-        // looping through allQuestions to split questions into separate arrays based on category
+        // loop through allQuestions to fill separate arrays based on category
         for question in allQuestions {
             if(question.category.contains("Travelling")){
                 travelArray.append(question)
@@ -114,7 +111,7 @@ class TriviaViewController: UIViewController {
                 commitmentsArray.append(question)
             }
         }
-        // Sort arrays into dictionary based on String of category = question array
+        // create dictionary based on String: category = question array
         self.allQuestionsDictionary["Travelling"] = travelArray
         self.allQuestionsDictionary["Before Rescuing"] = beforeArray
         self.allQuestionsDictionary["Visiting Shelters"] = visitingArray
@@ -154,6 +151,8 @@ class TriviaViewController: UIViewController {
     }
     
 }
+
+// MARK: - Extensions
 
 extension TriviaViewController : UICollectionViewDataSource {    
     // set the number of individual collection view cells

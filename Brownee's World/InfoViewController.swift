@@ -83,11 +83,9 @@ class InfoViewController: UIViewController {
             UIApplication.shared.openURL(url)
         }
     }
-    
 
-    /*
     // MARK: - Navigation
-    */
+ 
     @IBAction func unwindToInfo(segue:UIStoryboardSegue) {
     // unwind from donation items list
     }

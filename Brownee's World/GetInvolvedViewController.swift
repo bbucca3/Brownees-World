@@ -152,7 +152,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             ]
         ] as [String : Any]
         
-        // array of (struct) Organization objects fed from API call
+        // array of (struct) Organization objects to be fed from API call
         var allOrganizations: [Organization] = []
         // API request address
         let apiToContact = "https://api.rescuegroups.org/http/v2.json"
