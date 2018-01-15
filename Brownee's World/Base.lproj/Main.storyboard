@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oxu-Lz-BB7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oxu-Lz-BB7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-BoldItalic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Search-->
         <scene sceneID="zcd-T2-Gd4">
@@ -104,16 +111,16 @@
         <scene sceneID="4Kf-r8-f9j">
             <objects>
                 <tableViewController id="gag-Ad-Uqk" customClass="SuppliesTableViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="97" sectionHeaderHeight="18" sectionFooterHeight="18" id="jhO-6V-jC1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="97" sectionHeaderHeight="18" sectionFooterHeight="18" id="jhO-6V-jC1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.85490196078431369" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="6" indentationWidth="10" reuseIdentifier="cell" rowHeight="95" id="VLZ-45-1wK" customClass="SuppliesTableViewCell" customModule="Brownees_World" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VLZ-45-1wK" id="Ipf-cP-ezh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzb-qO-Eb0">
@@ -126,7 +133,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lef-LI-tZY">
-                                            <rect key="frame" x="28" y="30" width="35" height="35"/>
+                                            <rect key="frame" x="36" y="33" width="35" height="29"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                             </accessibility>
@@ -328,7 +335,7 @@
                             <textView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDS-Df-vR7">
                                 <rect key="frame" x="37" y="74" width="300" height="378"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">Brownee's World was inspired by Animal Assistance 501c3 and Brownee the Plain Brown Dog LLC. The search for rescue organizations and shelters is powered by the RescueGroups.org API.  Special thanks to Sinclair Toffa, Teressa Eid, Daniel Haaser, Szi Gábor, Marta González, Guille Garcia and Jacob Lichtstrahl @ Make School Summer Academy NYC 2016.  All graphics (except Brownee's World App Icon) attributed to Icons8.</mutableString>
+                                <string key="text">Brownee's World was inspired by Animal Assistance 501c3 and Brownee the Plain Brown Dog LLC. The search for rescue organizations and shelters is powered by the RescueGroups.org API.  Special thanks to Sinclair Toffa, Teressa Eid, Daniel Haaser, Szi Gábor, Marta González, Guille Garcia and Jacob Lichtstrahl @ Make School Summer Academy NYC 2016.  All graphics (except Brownee's World App Icon) attributed to Icons8.</string>
                                 <color key="textColor" red="0.26666666666666666" green="0.17254901960784313" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -428,6 +435,7 @@
                                         </view>
                                         <color key="backgroundColor" red="0.26666666666666666" green="0.17254901960784313" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="w4j-FF-1m5" secondAttribute="trailing" constant="218" id="6nN-Au-qB8"/>
                                             <constraint firstItem="w4j-FF-1m5" firstAttribute="top" secondItem="OBY-Ld-Mit" secondAttribute="top" id="MaR-wN-MsY"/>
                                             <constraint firstItem="w4j-FF-1m5" firstAttribute="leading" secondItem="OBY-Ld-Mit" secondAttribute="leading" id="ykr-rk-i7A"/>
                                         </constraints>
@@ -492,7 +500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pcq-LI-zHm">
-                                <rect key="frame" x="50" y="537" width="275" height="43"/>
+                                <rect key="frame" x="50" y="586" width="275" height="43"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7N-si-0im">
                                         <rect key="frame" x="0.0" y="0.0" width="137.5" height="43"/>
@@ -533,13 +541,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browneeGame" translatesAutoresizingMaskIntoConstraints="NO" id="Uyb-7S-WsU">
-                                <rect key="frame" x="50" y="401" width="125" height="79"/>
+                                <rect key="frame" x="50" y="450" width="125" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="9KU-RD-JkO"/>
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browneeHouseGame" translatesAutoresizingMaskIntoConstraints="NO" id="kpJ-Dn-SRA">
-                                <rect key="frame" x="302" y="401" width="53" height="61"/>
+                                <rect key="frame" x="302" y="450" width="53" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="9w7-CT-ayG"/>
                                     <constraint firstAttribute="width" secondItem="kpJ-Dn-SRA" secondAttribute="height" multiplier="53:61" id="Jnz-BI-J02"/>
@@ -552,13 +560,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut l" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-CQ-2G8">
-                                <rect key="frame" x="50" y="175" width="275" height="220"/>
+                                <rect key="frame" x="50" y="175" width="275" height="269"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18.5"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browneeDogBowlGame" translatesAutoresizingMaskIntoConstraints="NO" id="v9i-B3-C0Q">
-                                <rect key="frame" x="284" y="464" width="35" height="35"/>
+                                <rect key="frame" x="284" y="513" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="0YR-bM-all"/>
                                 </constraints>
@@ -631,7 +639,6 @@
                 <navigationController title="Common Shelter Donation Items" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" navigationBarHidden="YES" toolbarHidden="NO" id="0VU-wS-eCA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ceA-QS-b9Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

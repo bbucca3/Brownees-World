@@ -50,18 +50,13 @@ class SuppliesTableViewController: UITableViewController {
         
         // create each cell custom SuppliesTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! SuppliesTableViewCell
-        
         // sets each cell label
         cell.categorySupply = suppliesList[indexPath.row]
-        
         // sets each cell image
         cell.imageSupply = UIImage(named: supplyImages[indexPath.row])
-        
         // border details for each cell
         cell.layer.borderWidth = 1.0
         cell.layer.cornerRadius = 35
-
         return cell
     }
-
 }

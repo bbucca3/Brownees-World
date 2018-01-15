@@ -10,9 +10,9 @@ import UIKit
 // class for each Educational Category cell (TriviaViewController)
 class CategoryTitleCollectionViewCell: UICollectionViewCell {
     
-    // Hidden labels for each collection view cell
+    // Hidden label for each collection view cell
     @IBOutlet weak var categoryLabel: UILabel!
-    // Text labels for each collection view cell
+    // Text label for each collection view cell
     @IBOutlet weak var descriptionLabel: UILabel!
     // dog image for each collection view cell
     @IBOutlet weak var dogImage: UIImageView!

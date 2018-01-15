@@ -1,10 +1,9 @@
-//
 //  TriviaViewController.swift
 //  Brownee's World
 //
 //  Created by Benjamin Bucca on 7/20/16.
 //  Copyright © 2016 Animal Assistance. All rights reserved.
-//
+
 import Foundation
 import UIKit
 import MapKit
@@ -57,9 +56,9 @@ class TriviaViewController: UIViewController {
         // Enter SwiftyJSON
         let jsonData = try? Data(contentsOf: jsonURL)
         // questionsData now contains a JSON object representing all the data in the JSON file.
-        let questionsData = JSON(data: jsonData! as Data)
+        let questionsData = try? JSON(data: jsonData! as Data)
         // loop over questionsData.arrayValue
-        let allQuestionsData = questionsData["questions"].arrayValue
+        let allQuestionsData = questionsData!["questions"].arrayValue
         // create a var for every single question allQuestions: array of struct Question
         var allQuestions: [Question] = []
         
@@ -122,8 +121,7 @@ class TriviaViewController: UIViewController {
         self.allQuestionsDictionary["Home Safety"] = homeSafeArray
         self.allQuestionsDictionary["Commitments"] = commitmentsArray
         
-        return allQuestions
-        
+        return allQuestions        
     }
     
 // MARK: - Navigation

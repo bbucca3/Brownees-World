@@ -39,19 +39,15 @@ class InfoViewController: UIViewController {
     }
 
     @IBAction func donateButton(_ sender: AnyObject) {
-        
         guard let url = URL(string: "http://www.animalassistance.org/donations/") else {
             return //be safe
         }
-        
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
         }
-        
-    }
-    
+    }    
     
     @IBAction func registerShelterButton(_ sender: UIButton) {
         let customIcon:UIImage! = UIImage(named: "dog_house_tab_filled")
@@ -76,7 +72,6 @@ class InfoViewController: UIViewController {
         guard let url = URL(string: "https://rescuegroups.org/sign-up/") else {
             return //be safe
         }
-        
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
@@ -84,7 +79,7 @@ class InfoViewController: UIViewController {
         }
     }
 
-    // MARK: - Navigation
+// MARK: - Navigation
  
     @IBAction func unwindToInfo(segue:UIStoryboardSegue) {
     // unwind from donation items list

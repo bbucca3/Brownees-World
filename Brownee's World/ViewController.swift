@@ -33,9 +33,9 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
         //selected objs
         let selectedObjs = NSArray(objects: font!, hexStringToUIColor("442C1D"))
         //setting it
-        let keys = NSArray(objects: NSFontAttributeName, NSForegroundColorAttributeName)
-        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: objs as [AnyObject], forKeys: keys as! [NSCopying]) as? [String : AnyObject], for: UIControlState.normal)
-        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: selectedObjs as [AnyObject], forKeys: keys as! [NSCopying]) as? [String : AnyObject], for: UIControlState.selected)
+        let keys = NSArray(objects: NSAttributedStringKey.font, NSAttributedStringKey.foregroundColor)
+        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: objs as [AnyObject], forKeys: keys as! [NSCopying]) as? [NSAttributedStringKey : Any], for: UIControlState.normal)
+        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(objects: selectedObjs as [AnyObject], forKeys: keys as! [NSCopying]) as? [NSAttributedStringKey : Any], for: UIControlState.selected)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,9 +57,9 @@ class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDel
     }
     
     func hexStringToUIColor (_ hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines as NSCharacterSet) as CharacterSet).uppercased()
+        let cString:String = hex.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines as NSCharacterSet) as CharacterSet).uppercased()
 
-        if ((cString.characters.count) != 6) {
+        if ((cString.count) != 6) {
             return UIColor.gray
         }
         var rgbValue:UInt32 = 0

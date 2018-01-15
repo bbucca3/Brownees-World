@@ -44,11 +44,11 @@ class AboutViewController: UIViewController, PaperOnboardingDataSource {
         // array: main image, title text, description text, tab image, background color,
         // title text color, description text color, title font, description font
         return[
-            ("browneeOnboard", "Brownee's World", "Swipe left to see more or swipe right to exit.", "dogTab", UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            (UIImage(named:"browneeOnboard")!, "Brownee's World", "Swipe left to see more or swipe right to exit.", UIImage(named:"dogTab")!, UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
             
-            ("footOnboard", "Education", "Answer questions about a dog's life before and after rescuing from a shelter. Swipe left to see more or swipe right to go back.", "dog_footprint_tab", UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
+            (UIImage(named:"footOnboard")!, "Education", "Answer questions about a dog's life before and after rescuing from a shelter. Swipe left to see more or swipe right to go back.", UIImage(named:"dog_footprint_tab")!, UIColorFromHex(0xF8E6D6), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont),
             
-            ("houseOnboard", "Search", "Search for animal shelters and rescue organizations via any 5 digit USA ZIP code. View a list of common items that shelters will accept as donations. Swipe left to exit or swipe right to go back.", "dog_house_tab", UIColorFromHex(0xFEEEED), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
+            (UIImage(named:"houseOnboard")!, "Search", "Search for animal shelters and rescue organizations via any 5 digit USA ZIP code. View a list of common items that shelters will accept as donations. Swipe left to exit or swipe right to go back.", UIImage(named:"dog_house_tab")!, UIColorFromHex(0xFFF7F2), UIColorFromHex(0x442C1D), UIColorFromHex(0x442C1D), titleFont, descriptionFont)
             ][index]
     }
     // func for number of onboarding pages

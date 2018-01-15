@@ -1,4 +1,3 @@
-//
 //  GetInvolvedViewController.swift
 //  Brownee's World
 //
@@ -29,7 +28,6 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         mapView.removeAnnotations(mapView.annotations)
         self.pinsArray.removeAll()
         // call function to check zipcode
-        // print("Search Button Pressed")
         _ = textFieldShouldReturn(zipSearch)
     }
     
@@ -69,15 +67,14 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // func checks ZIP code text for 5 digits exact
+    // checks ZIP code text for 5 exactly digits
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // cast text from textfield as an int otherwise string will be nil
         let enteredText = Int(textField.text!)
         // if the UITextField for zipcode is empty AND without 5 characters
-        if ((textField.text != nil && textField.text?.characters.count != 5) || enteredText == nil) {
+        if ((textField.text != nil && textField.text?.count != 5) || enteredText == nil) {
             // show error message modal
             DispatchQueue.main.async { [unowned self] in
                 JSSAlertView().show(
@@ -91,7 +88,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         else {
             // function to drop keyboard on return
             _ = textFieldShouldClear(zipSearch)
-            // function to send zipcode to API call
+            // function to send 5 digit zip to API call
             requestSheltersForZipcode(textField.text!)
         }
         return true
@@ -107,7 +104,6 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         // remove all annotations from map and clear pinsArray
         mapView.removeAnnotations(mapView.annotations)
         
-        let resultLimit: String = "50"
         var radiusInput: String = "0"
         
         switch radiusSelect.selectedSegmentIndex {
@@ -123,6 +119,8 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             break
         }
         
+        let resultLimit: String = "50"
+        
         let headers = [
             "content-type": "application/json",
             "cache-control": "no-cache",
@@ -135,30 +133,31 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             "search": [
                 "resultStart": "0",
                 "resultLimit": resultLimit,
-               
+                "resultSort": "orgID",
+                "resultOrder": "asc",
                 "filters": [
+                    [
+                        "fieldName": "orgLocation",
+                        "operation": "equals",
+                        "criteria": zipcode
+                    ],
                     [
                         "fieldName": "orgLocationDistance",
                         "operation": "radius",
                         "criteria": radiusInput
                     ],
-                    [
-                        "fieldName": "orgLocation",
-                        "operation": "equals",
-                        "criteria": zipcode
-                    ]
                 ],
                 "fields": ["orgID", "orgLocation", "orgName", "orgAddress", "orgCity", "orgState", "orgPostalcode", "orgCountry", "orgPhone", "orgEmail", "orgWebsiteUrl", "orgAbout", "orgServices", "orgType", "orgLocationDistance"]
             ]
         ] as [String : Any]
         
-        // array of (struct) Organization objects to be fed from API call
-        var allOrganizations: [Organization] = []
+        // array of Organization (struct) objects to be fed from API call
+        var allOrganizations:[Organization] = []
         // API request address
         let apiToContact = "https://api.rescuegroups.org/http/v2.json"
-        
+        // API request
         Alamofire.request(apiToContact, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate().responseJSON() { [unowned self] response in
-            // In the closure handle success and failure with a switch statement
+            // In closure handle success and failure with a switch statement
             switch response.result {
             // If successful, create a JSON object from the response.result's value
             case .success:
@@ -168,7 +167,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                     let resultsDictionary = json.dictionaryValue
                     print("RESULTS: ", resultsDictionary)
                     
-                    // checks for errors within json response object before populating dictionary of search results
+                    // check for empty results or errors within json response before populating search results dictionary
                     if( resultsDictionary["foundRows"] == 0 || resultsDictionary["status"] == "error" ) {
                         // show error message modal
                         DispatchQueue.main.async { [unowned self] in
@@ -184,14 +183,13 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                     if let dataDictionary = resultsDictionary["data"]?.dictionaryValue {
                         
                         for (_, value) in dataDictionary {
-                            // construction an Organization object, passing in the value(s) to the initializer
+                            // construct an Organization object, passing in the value(s) to the initializer
                             let currentOrg = Organization(json: value)
-                            //print(currentOrg)
-                            // add each currentOrg object to the allOrganizations (fed Organization struct) array
+                            // add each currentOrg object to the allOrganizations (Organization struct) array
                             allOrganizations.append(currentOrg)
                         }
                     }
-                    //print(allOrganizations)
+                    // print(allOrganizations)
                     // geoCoder object handles locating orgs based on data from API call
                     let geoCoder = CLGeocoder()
                     // object holds each annotation-creation operation
@@ -199,25 +197,21 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                     
                     // sets number of able concurrent operations
                     operationQueue.maxConcurrentOperationCount = 1
-                    // runs at end of operation
+                    // runs at end of operation queue
                     let completionOperation = BlockOperation(block: {
                         // display all pin annotations on map
                         self.mapView.showAnnotations(self.pinsArray, animated: false)
                         operationQueue.cancelAllOperations()
-                        
                     })
-                    
                     // loop through each org to create geocode operation
                     for org in allOrganizations {
                         
-                        if (org.address != "") {
-                            
                             let operation = BlockOperation(block: {
                                 
                                 let semaphore = DispatchSemaphore(value: 0);
                                 
                                 let orgLocation = org.address + " " + org.city + " " + org.state + " " + org.zipcode + " " + org.country
-                                
+                                print("orgLocation: ", orgLocation)
                                 geoCoder.geocodeAddressString(orgLocation, completionHandler: { placemarks, error in
                                     if error != nil {
                                         //print(error?.localizedDescription.)
@@ -227,53 +221,47 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                                             JSSAlertView().show(
                                                 self,
                                                 title: "Error",
-                                                text: "Search Overload (Please Wait 60 seconds Before Searching Again).",
+                                                text: "Search Overload (Please Wait a Minute Before Searching Again).",
                                                 buttonText: "Ok",
                                                 color: UIColorFromHex(0x942522, alpha: 0.85))
                                         }
-                                        print("error inside geoCoder", error!)
+                                        print("error inside geoCoder: ", error!)
                                         return
                                     }
                                     
                                     if let placemarks = placemarks {
-                                        
                                         // Get the first placemark
                                         let placemark = placemarks[0]
                                         // Add annotation
                                         if let location = placemark.location {
-                                            
+                                            // print("location ", location)
                                             let pointAnnotation = MKPointAnnotation()
                                             pointAnnotation.coordinate = location.coordinate
                                             
                                             pointAnnotation.title = org.name
                                             
                                             if (org.website == "http://" || org.website == "" || org.website == " "){
-                                                pointAnnotation.subtitle = "No Website Found"
+                                                pointAnnotation.subtitle = "No Website in Search Results"
                                             }
                                             else {
                                                 pointAnnotation.subtitle = org.website
                                             }
                                             // append newly created annotation to array.
-                                                self.pinsArray.append(pointAnnotation)
+                                            self.pinsArray.append(pointAnnotation)
                                         }
                                     }
                                     semaphore.signal()
                                 })
-                                // replace d_time with FOREVER
                                 _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-                                
                             })
                             // completionOperation dependent on each operation
                             completionOperation.addDependency(operation)
                             // add each operation to queue
                             operationQueue.addOperation(operation)
-                        }
                     }
-                    
                     OperationQueue.main.addOperation(completionOperation)
                     
                 }
-                
             case .failure(let error):
                 print(error)
             }
@@ -313,8 +301,6 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             annotationView!.rightCalloutAccessoryView?.tintColor = UIColorFromHex(0x442C1D)
             return annotationView
     }
-    
-    
     // function that creates modal when tapping on callout disclosure
     // modal contains shelter name and possible website
     func mapView(_ mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -332,7 +318,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                 }
                 
                 guard let url = URL(string: text!) else {
-                    return //be safe
+                    return
                 }
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -344,7 +330,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             // sets custom icon for modal
             let customIcon:UIImage! = UIImage(named: "dog_house_tab_filled")
             // modal for no website
-            if(text == "No Website Found"){
+            if(text == "No Website in Search Results"){
                 // Modal view for each org detail disclosure with website
                 DispatchQueue.main.async { [unowned self] in
                     let alertView = JSSAlertView().show(
@@ -379,11 +365,8 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             }
         }
     }
-    
-    // function that drops keyboard upon single screen tap
+    // drops keyboard upon single screen tap
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
 }
-
