@@ -112,7 +112,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         case 1:
             radiusInput = "5"
         case 2:
-            radiusInput = "8"
+            radiusInput = "7"
         default:
             radiusInput = "5"
             break

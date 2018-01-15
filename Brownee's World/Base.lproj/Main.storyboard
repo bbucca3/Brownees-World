@@ -168,7 +168,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="OXH-mS-8Vh">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="0.96125298738479614" blue="0.92748147249221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem image="backButton" id="fks-2v-rtB" userLabel="backBarButtonItem">
                             <connections>
