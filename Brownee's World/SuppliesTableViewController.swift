@@ -1,13 +1,12 @@
-//
 //  SuppliesTableViewController.swift
 //  Brownees World
 //
 //  Created by Benjamin Bucca on 8/13/16.
 //  Copyright © 2016 Animal Assistance. All rights reserved.
-//
 
 import UIKit
 import SafariServices
+import JSSAlertView
 
 class SuppliesTableViewController: UITableViewController {
     
@@ -17,6 +16,8 @@ class SuppliesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // sets nav bar color to match tab bar
+        self.navigationController?.toolbar.barTintColor = UIColorFromHex(0xFFF7F2)
     }
 
     override func didReceiveMemoryWarning() {
