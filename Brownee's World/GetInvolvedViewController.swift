@@ -108,18 +108,17 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         
         switch radiusSelect.selectedSegmentIndex {
         case 0:
-            radiusInput = "5"
+            radiusInput = "3"
         case 1:
-            radiusInput = "10"
+            radiusInput = "5"
         case 2:
-            radiusInput = "15"
-        case 3:
-            radiusInput = "20"
+            radiusInput = "8"
         default:
+            radiusInput = "5"
             break
         }
         
-        let resultLimit: String = "50"
+        let resultLimit: String = "59"
         
         let headers = [
             "content-type": "application/json",
@@ -145,7 +144,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                         "fieldName": "orgLocationDistance",
                         "operation": "radius",
                         "criteria": radiusInput
-                    ],
+                    ]
                 ],
                 "fields": ["orgID", "orgLocation", "orgName", "orgAddress", "orgCity", "orgState", "orgPostalcode", "orgCountry", "orgPhone", "orgEmail", "orgWebsiteUrl", "orgAbout", "orgServices", "orgType", "orgLocationDistance"]
             ]
@@ -165,6 +164,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                     //print(value)
                     let json = JSON(value)
                     let resultsDictionary = json.dictionaryValue
+                    print("parameters: ", parameters)
                     print("RESULTS: ", resultsDictionary)
                     
                     // check for empty results or errors within json response before populating search results dictionary
@@ -174,7 +174,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
                             JSSAlertView().show(
                                 self,
                                 title: "0 Results Found",
-                                text: "Please try searching with another zipcode.",
+                                text: "Please try searching with another zip code or a different radius.",
                                 buttonText: "Ok",
                                 color: UIColorFromHex(0xED3F3B, alpha: 0.65))
                         }
