@@ -16,7 +16,7 @@ class SuppliesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // sets nav bar color to match tab bar
+        // sets nav bar color to match home tab bar
         self.navigationController?.toolbar.barTintColor = UIColorFromHex(0xFFF7F2)
     }
 
