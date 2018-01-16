@@ -45,7 +45,7 @@
                                 <segments>
                                     <segment title="3 mi"/>
                                     <segment title="5 mi"/>
-                                    <segment title="8 mi"/>
+                                    <segment title="7 mi"/>
                                 </segments>
                                 <color key="tintColor" red="0.20000000000000001" green="0.12941176470588237" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
