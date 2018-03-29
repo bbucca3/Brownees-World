@@ -16,12 +16,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        // let tabBar be rootViewController to set selectedIndex
+        // set tabBar to be rootViewController
         let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+        // set selectedIndex to be first tab
         tabBar.selectedIndex = 0
+        // check if app is first time launching ever
+        _ = isAppAlreadyLaunchedOnce()
         return true
-        
+    }
+    
+    func isAppAlreadyLaunchedOnce() -> Bool {
+        let defaults = UserDefaults.standard
+        // Check point for app previous launch
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("App already launched : \(isAppAlreadyLaunchedOnce)")
+            return true
+        }else{
+            print("App launched first time")
+            // set key value pair for app launch check
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            // set window to device dimensions
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            // ref to storyboard where view controller is
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // ref to specific view controller to show first
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewController")
+            // sets that view controller as the root
+            self.window?.rootViewController = initialViewController
+            // sets window up in front
+            self.window?.makeKeyAndVisible()
+            return true
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
