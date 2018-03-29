@@ -185,7 +185,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vjz-xE-kbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="RfU-gN-n1T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1306" y="1861"/>
+            <point key="canvasLocation" x="2036" y="1861"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -274,7 +274,7 @@
         <!--About View Controller-->
         <scene sceneID="yqL-cC-qGb">
             <objects>
-                <viewController id="DZF-g4-gB6" customClass="AboutViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DZF-g4-gB6" customClass="AboutViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Mx-XK-1CM"/>
                         <viewControllerLayoutGuide type="bottom" id="85s-m0-Hlh"/>
@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91B-jh-pmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1029.5999999999999" y="1009.7451274362819"/>
+            <point key="canvasLocation" x="1706" y="1032"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VML-X2-4DY">
@@ -659,7 +659,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSe-nX-Sy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="458" y="1886"/>
+            <point key="canvasLocation" x="1220" y="1861"/>
         </scene>
     </scenes>
     <resources>
