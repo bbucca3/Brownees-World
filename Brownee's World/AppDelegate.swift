@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
             print("App already launched : \(isAppAlreadyLaunchedOnce)")
             return true
-        }else{
+        } else {
             print("App launched first time")
             // set key value pair for app launch check
             defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
