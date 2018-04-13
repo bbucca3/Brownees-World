@@ -3,7 +3,7 @@
     {
       "title":"Is it a good idea to do research about specific breeds before rescuing?",
       "answer" : true,
-      "explanation":"Doing research about specific breeds will expand your knowledge about all breeds!",
+      "explanation":"Doing research about specific breeds will expand your knowledge about all breeds.",
       "category" : "Before Rescuing"
     },
     {
@@ -33,7 +33,7 @@
     {
       "title":"When visiting a shelter for the first time is it a good idea to make fast, sudden movements around the dogs?",
       "answer" : false,
-      "explanation":"That's not a good idea, the dogs might be nervous and could be alarmed. Ask for assistance and observe the behavior of the dogs first.",
+      "explanation":"The dogs might be nervous and could be alarmed. Ask for assistance and observe the behavior of the dogs first.",
       "category" : "Visiting Shelters"
     }, 
     {
@@ -67,7 +67,7 @@
       "category" : "First Days Together"
     },
     {
-      "title":"Is it a good idea for you to be patient with toilet training (house breaking your dog)?",
+      "title":"Is it a good idea for you to be patient with toilet training (house breaking) your dog?",
       "answer" : true,
       "explanation":"Dogs learn quickly but may have a few accidents along the way.",
       "category" : "First Days Together"
@@ -79,7 +79,7 @@
       "category" : "First Days Together"
     },
     {
-      "title":"Should you sometimes give your dog a treat as a reward for good behavior?",
+      "title":"Should you give your dog a treat as a reward for good behavior?",
       "answer" : true,
       "explanation":"Treats can be used to reinforce good behavior!",
       "category" : "First Days Together"
@@ -87,7 +87,7 @@
     {
       "title":"Should you allow your dog to walk off leash in public parks?",
       "answer" : false,
-      "explanation":"Not a good idea, always check and be aware of local leash laws.",
+      "explanation":"Always check and be aware of local leash laws.",
       "category" : "First Days Together"
     },
     {
@@ -105,7 +105,7 @@
     {
       "title":"Is it a good idea to let your dog play unsupervised with other dogs?",
       "answer" : false,
-      "explanation":"That's not a good idea, you should be alert to the potential for play to get too rough or for accidents to happen.",
+      "explanation":"Try to be alert to the potential for play to get too rough or for accidents to happen.",
       "category" : "Meeting Other Dogs"
     },
     {
@@ -147,7 +147,7 @@
     {
       "title":"Should you discipline your dog by using a firm tone of voice?",
       "answer" : true,
-      "explanation":"It's a good idea to use a firm tone of voice to communicate discipline and commands.",
+      "explanation":"Use a firm tone of voice to communicate discipline and commands.",
       "category" : "Family Life"
     },
     {
@@ -159,13 +159,13 @@
     {
       "title":"Should you make sure that your dog stays in the backseat of the car while driving?",
       "answer" : true,
-      "explanation":"That's a good idea. You should not allow your dog to sit on your lap in the front seat of the car.",
+      "explanation":"You should not allow your dog to sit on your lap or in the front seat of the car.",
       "category" : "Travelling"
     },
     {
       "title":"Is it a good idea to have a blanket spread on the backseat of your car for your dog to lay on?",
       "answer" : true,
-      "explanation":"That's a good idea! Your dog will feel more comfortable and your car will stay cleaner.",
+      "explanation":"Your car will stay cleaner.",
       "category" : "Travelling"
     },
     {
@@ -177,37 +177,37 @@
     {
       "title":"When travelling with your dog on an airplane, is it a good idea to have your dog's ID visible?",
       "answer" : true,
-      "explanation":"That's a good idea because the airline workers identify and comfort your dog.",
+      "explanation":"Airline workers will identify and comfort your dog.",
       "category" : "Travelling"
     },
       {
         "title":"Is it safe to feed your dog grapes?",
         "answer" : false,
-        "explanation":"That's not a good idea! Grapes are bad for a dog's kidneys.",
+        "explanation":"Grapes are bad for a dog's kidneys.",
         "category" : "Food Safety"
       },
       {
         "title":"Is it safe to feed your dog peanut butter?",
         "answer" : true,
-        "explanation":"That's a good idea, most dogs love peanut butter!",
+        "explanation":"Most dogs love peanut butter!",
         "category" : "Food Safety"
       },
       {
         "title":"Is it safe to feed your dog chocolate?",
         "answer" : false,
-        "explanation":"That's not a good idea! Chocolate is toxic to dogs!",
+        "explanation":"Chocolate is toxic to dogs!",
         "category" : "Food Safety"
       },
       {
         "title":"Is it safe to feed your dog garlic?",
         "answer" : false,
-        "explanation":"That's not a good idea! Garlic is toxis to dogs!",
+        "explanation":"Garlic is toxis to dogs!",
         "category" : "Food Safety"
       },
       {
-        "title":"Is it safe to feed your dog chicken bones?",
+        "title":"Is it safe to feed your dog cooked chicken bones?",
         "answer" : false,
-        "explanation":"That's not a good idea. Cooked chicken bones can damage a dog's stomach.",
+        "explanation":"Cooked chicken bones can damage a dog's stomach.",
         "category" : "Food Safety"
       },
       {
@@ -225,7 +225,7 @@
       {
         "title":"Is it a good idea to allow your dog to rummage through the trash?",
         "answer" : false,
-        "explanation":"That's not a good idea because certain food waste could make your dog sick.",
+        "explanation":"Certain food waste could make your dog sick.",
         "category" : "Home Safety"
       },
       {
@@ -237,13 +237,13 @@
       {
         "title":"Is it a good idea to leave your dog alone in a room with lit candles?",
         "answer" : false,
-        "explanation":"That's not a good idea because your dog could knock over the candle!",
+        "explanation":"That's not a good idea because your dog might knock over a candle and start a fire!",
         "category" : "Home Safety"
       },
       {
         "title":"Is it a good idea for a dog with long hair that sheds to be groomed several times per year (professional or at home)?",
         "answer" : true,
-        "explanation":"That's a good idea because their fur will become otherwise unmanageable and could lead to further complications!",
+        "explanation":"Either way is a good idea to consider because their fur might become otherwise unmanageable and could lead to further complications.",
         "category" : "Commitments"
       },
       {
