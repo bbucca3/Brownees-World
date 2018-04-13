@@ -10,8 +10,9 @@ import UIKit
 import JSSAlertView
 import CoreGraphics
 
-// class for each question game
 class QuestionViewController: UIViewController {
+    
+    //MARK: Properties
     
     @IBOutlet weak var scoreField: UITextField!
     
@@ -25,23 +26,60 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
-    // received from segue
+    // Received specific question array from segue
     var questionArray : [Question] = []
-    // index for questionArray
+    // Index for questionArray
     var currentIndex : Int = 0
-    // index for dogImage transform
+    // Index for dogImage transform
     var dogIndex : Float = 0.0
-    // yes button
+    // Yes button
     @IBAction func trueButton(_ sender: UIButton) {
         self.checkAnswer(true)
     }
-    // no button
+    // No button
     @IBAction func falseButton(_ sender: UIButton) {
         self.checkAnswer(false)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Set index for going through questionArray
+        currentIndex = 0
+        // Set label text of question category
+        categoryLabel.text = questionArray[currentIndex].category
+        // Set first question text
+        questionField.text = questionArray[currentIndex].question
+        // Create custom background gradient
+        let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
+        let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
+        let gradientLocations: [Float] = [0.0, 1.0]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.locations = gradientLocations as [NSNumber]?
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showNextQuestion()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Private Functions
+    
+    // function that displays next question text from array of questions and updates score
+    private func showNextQuestion() {
+        questionField.text = questionArray[currentIndex].question
+        scoreField.text = "Question number: " + String(currentIndex+1) + " / " + String(questionArray.count)
+    }
+    
     // function that accepts either true or false (usersAnswer)
-    func checkAnswer(_ usersAnswer: Bool) {
+    private func checkAnswer(_ usersAnswer: Bool) {
         // check usersAnswer true or false
         if(questionArray[currentIndex].ans == usersAnswer) {
             // show dog and dogbowl image
@@ -84,42 +122,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    // function that displays next question text from array of questions and updates score
-    func showNextQuestion() {
-        questionField.text = questionArray[currentIndex].question
-        scoreField.text = "Question number: " + String(currentIndex+1) + " / " + String(questionArray.count)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // index for going through questionArray
-        currentIndex = 0
-        // label text of question category
-        categoryLabel.text = questionArray[currentIndex].category
-        // question text
-        questionField.text = questionArray[currentIndex].question
-        // custom background gradient
-        let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
-        let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
-        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLocations: [Float] = [0.0, 1.0]
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColors
-        gradientLayer.locations = gradientLocations as [NSNumber]?
-        gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        showNextQuestion()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func finishedWithQuestions() {
+    private func finishedWithQuestions() {
         let customIcon:UIImage! = UIImage(named: "dog_footprint_filled")        
         DispatchQueue.main.async { [unowned self] in
             let alertView = JSSAlertView().show(
@@ -136,7 +139,9 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    func finishedSegue() {
+    //MARK: Navigation
+    
+    private func finishedSegue() {
         self.performSegue(withIdentifier: "cancelSegue", sender: self)
         return
     }

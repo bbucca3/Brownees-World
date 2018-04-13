@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// class for each Educational Category cell (TriviaViewController)
+
 class EducationCollectionViewCell: UICollectionViewCell {
     
     // Text label for each collection view cell
