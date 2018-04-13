@@ -1,8 +1,6 @@
 # Brownee's World
 
-![Brownee](brownee.png)
-
-![alt text](https://bbucca3.github.io/img/browneeIcon.jpg)
+![Brownee's World App Icon](https://bbucca3.github.io/img/browneeIcon.jpg)
 
 ### Description
 
