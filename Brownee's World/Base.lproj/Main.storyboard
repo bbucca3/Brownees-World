@@ -272,7 +272,7 @@
         <!--Onboard View Controller-->
         <scene sceneID="yqL-cC-qGb">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DZF-g4-gB6" customClass="OnboardViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DZF-g4-gB6" customClass="OnboardViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Mx-XK-1CM"/>
                         <viewControllerLayoutGuide type="bottom" id="85s-m0-Hlh"/>

@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func isAppAlreadyLaunchedOnce() -> Bool {
+        // Create defaults
         let defaults = UserDefaults.standard
         // Check point for app previous launch
         if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
@@ -38,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Ref to storyboard where view controller is
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             // Ref to view controller to show first
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewController")
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardViewController")
             // Sets that view controller as the root
             self.window?.rootViewController = initialViewController
             // Sets window to be visible
