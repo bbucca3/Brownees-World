@@ -7,8 +7,11 @@
 //
 
 import UIKit
-// class for each cell for Donatable Items (SuppliesTableViewController)
+
 class SuppliesTableViewCell: UITableViewCell {
+    
+    //MARK: Properties
+    
     // text
     @IBOutlet weak var labelCell: UILabel!
     // image
