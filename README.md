@@ -2,6 +2,8 @@
 
 ![Brownee](brownee.png)
 
+![alt text](https://bbucca3.github.io/img/browneeIcon.jpg)
+
 ### Description
 
 [Brownee’s World](https://itunes.apple.com/us/app/id1143337193) connects people passionate about rescue/shelter dogs with places that best provide support for them. Brownee’s World contains a question and answer game to learn more about the adoption process and life of a rescue/shelter dog. Questions are designed for all ages so as to prompt discussion about personal responsibilities when interacting with rescue/shelter dogs as well as dogs in general. 
