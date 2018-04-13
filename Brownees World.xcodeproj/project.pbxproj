@@ -25,7 +25,7 @@
 		636CFA611D4BEF8C008CA728 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636CFA601D4BEF8C008CA728 /* MapKit.framework */; };
 		636CFA631D4F8B10008CA728 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CFA621D4F8B10008CA728 /* Organization.swift */; };
 		63D8C6961D5CF82E009A4613 /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331CB561D3FFF8400A72E8D /* GetInvolvedViewController.swift */; };
-		63D8C6981D5D08B5009A4613 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C6971D5D08B5009A4613 /* AboutViewController.swift */; };
+		63D8C6981D5D08B5009A4613 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C6971D5D08B5009A4613 /* OnboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 		636CFA5E1D47F1DF008CA728 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		636CFA601D4BEF8C008CA728 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		636CFA621D4F8B10008CA728 /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
-		63D8C6971D5D08B5009A4613 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		63D8C6971D5D08B5009A4613 /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		9B6BE021D6D53FB560E16CDD /* Pods-Brownee's World.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownee's World.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brownee's World/Pods-Brownee's World.release.xcconfig"; sourceTree = "<group>"; };
 		9C5C337381E3218FD1E90546 /* Pods-Brownees World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownees World.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brownees World/Pods-Brownees World.debug.xcconfig"; sourceTree = "<group>"; };
 		B039A3BF0F35CABBB74096EB /* Pods_Brownee_s_World.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brownee_s_World.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +106,7 @@
 				636CFA621D4F8B10008CA728 /* Organization.swift */,
 				6331CB5D1D414F6E00A72E8D /* Question.swift */,
 				6331CB5C1D414F6E00A72E8D /* questions.json */,
-				63D8C6971D5D08B5009A4613 /* AboutViewController.swift */,
+				63D8C6971D5D08B5009A4613 /* OnboardViewController.swift */,
 				6331CB421D3FB1FD00A72E8D /* AppDelegate.swift */,
 				6331CB441D3FB1FD00A72E8D /* ViewController.swift */,
 				6331CB561D3FFF8400A72E8D /* GetInvolvedViewController.swift */,
@@ -276,7 +276,7 @@
 				6331CB431D3FB1FD00A72E8D /* AppDelegate.swift in Sources */,
 				63D8C6961D5CF82E009A4613 /* GetInvolvedViewController.swift in Sources */,
 				636CFA5D1D466707008CA728 /* CategoryTitleCollectionViewCell.swift in Sources */,
-				63D8C6981D5D08B5009A4613 /* AboutViewController.swift in Sources */,
+				63D8C6981D5D08B5009A4613 /* OnboardViewController.swift in Sources */,
 				6331CB591D400D0C00A72E8D /* TriviaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

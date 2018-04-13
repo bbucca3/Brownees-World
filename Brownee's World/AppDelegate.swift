@@ -3,7 +3,7 @@
 //  Brownee's World
 //
 //  Created by Benjamin Bucca on 7/20/16.
-//  Copyright © 2016 Animal Assistance. All rights reserved.
+//  Copyright © 2016 Benjamin Bucca. All rights reserved.
 //
 
 import UIKit
@@ -13,14 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        // set tabBar to be rootViewController
+        // Set tabBar to be root view
         let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-        // set selectedIndex to be first tab
+        // Set selectedIndex to be first tab
         tabBar.selectedIndex = 0
-        // check if app is first time launching ever
+        // Check if app is first time launching ever
         _ = isAppAlreadyLaunchedOnce()
         return true
     }
@@ -32,18 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("App already launched : \(isAppAlreadyLaunchedOnce)")
             return true
         } else {
-            print("App launched first time")
-            // set key value pair for app launch check
+            // Set key value pair for successful app launch
             defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            // set window to device dimensions
+            // Set window to device dimensions
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            // ref to storyboard where view controller is
+            // Ref to storyboard where view controller is
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            // ref to specific view controller to show first
+            // Ref to view controller to show first
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewController")
-            // sets that view controller as the root
+            // Sets that view controller as the root
             self.window?.rootViewController = initialViewController
-            // sets window up in front
+            // Sets window to be visible
             self.window?.makeKeyAndVisible()
             return true
         }
