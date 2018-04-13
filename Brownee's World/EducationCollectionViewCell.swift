@@ -1,5 +1,5 @@
 //
-//  CategoryTitleCollectionViewCell.swift
+//  EducationCollectionViewCell.swift
 //  Brownees World
 //
 //  Created by Benjamin Bucca on 7/25/16.
@@ -8,20 +8,12 @@
 
 import UIKit
 // class for each Educational Category cell (TriviaViewController)
-class CategoryTitleCollectionViewCell: UICollectionViewCell {
+class EducationCollectionViewCell: UICollectionViewCell {
     
-    // Hidden label for each collection view cell
-    @IBOutlet weak var categoryLabel: UILabel!
     // Text label for each collection view cell
     @IBOutlet weak var descriptionLabel: UILabel!
     // dog image for each collection view cell
     @IBOutlet weak var dogImage: UIImageView!
-    
-    var category: String? {
-        didSet {
-            self.categoryLabel.text = category
-        }
-    }
     
     var details: String? {
         didSet {

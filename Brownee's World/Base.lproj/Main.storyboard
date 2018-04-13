@@ -385,7 +385,7 @@
         <!--Education-->
         <scene sceneID="fOM-b9-GfI">
             <objects>
-                <viewController id="OoZ-2s-qKq" customClass="TriviaViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OoZ-2s-qKq" customClass="EducationViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f91-7D-c8a"/>
                         <viewControllerLayoutGuide type="bottom" id="a7l-qN-zBM"/>
@@ -404,19 +404,13 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="OBY-Ld-Mit" customClass="CategoryTitleCollectionViewCell" customModule="Brownees_World" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="educationCell" id="OBY-Ld-Mit" customClass="EducationCollectionViewCell" customModule="Brownees_World" customModuleProvider="target">
                                         <rect key="frame" x="47.666666666666664" y="0.0" width="260" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4j-FF-1m5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.96862745098039216" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-tf-ex3">
                                                     <rect key="frame" x="0.0" y="118" width="259" height="20"/>
                                                     <constraints>
@@ -436,16 +430,12 @@
                                             <constraint firstItem="tfl-AM-iQY" firstAttribute="leading" secondItem="OBY-Ld-Mit" secondAttribute="leadingMargin" constant="-12" id="3pD-2J-zaH"/>
                                             <constraint firstItem="tfl-AM-iQY" firstAttribute="centerX" secondItem="bKR-tf-ex3" secondAttribute="centerX" id="6Gp-KS-2zy"/>
                                             <constraint firstItem="bKR-tf-ex3" firstAttribute="leading" secondItem="OBY-Ld-Mit" secondAttribute="leadingMargin" constant="-8" id="6bb-1Q-Dwx"/>
-                                            <constraint firstAttribute="trailing" secondItem="w4j-FF-1m5" secondAttribute="trailing" constant="218" id="6nN-Au-qB8"/>
                                             <constraint firstItem="tfl-AM-iQY" firstAttribute="centerX" secondItem="OBY-Ld-Mit" secondAttribute="centerX" id="MKg-UU-r4h"/>
-                                            <constraint firstItem="w4j-FF-1m5" firstAttribute="top" secondItem="OBY-Ld-Mit" secondAttribute="top" id="MaR-wN-MsY"/>
                                             <constraint firstItem="bKR-tf-ex3" firstAttribute="top" secondItem="tfl-AM-iQY" secondAttribute="bottom" constant="1" id="caj-ud-QqE"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="bKR-tf-ex3" secondAttribute="bottom" constant="-6" id="tT8-0z-hDD"/>
-                                            <constraint firstItem="w4j-FF-1m5" firstAttribute="leading" secondItem="OBY-Ld-Mit" secondAttribute="leading" id="ykr-rk-i7A"/>
                                             <constraint firstItem="tfl-AM-iQY" firstAttribute="top" secondItem="OBY-Ld-Mit" secondAttribute="topMargin" id="zfr-PC-NEb"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="categoryLabel" destination="w4j-FF-1m5" id="z5j-vP-qlx"/>
                                             <outlet property="descriptionLabel" destination="bKR-tf-ex3" id="cys-eM-RQF"/>
                                             <outlet property="dogImage" destination="tfl-AM-iQY" id="HOD-hD-L9W"/>
                                         </connections>
@@ -490,7 +480,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzd-L6-mQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1221" y="1033"/>
+            <point key="canvasLocation" x="-1221.5999999999999" y="1032.2660098522167"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="PfN-ge-zqD">
