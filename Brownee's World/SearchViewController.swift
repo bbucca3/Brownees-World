@@ -1,4 +1,4 @@
-//  GetInvolvedViewController.swift
+//  SearchViewController.swift
 //  Brownee's World
 //
 //  Created by Benjamin Bucca on 7/20/16.
@@ -12,7 +12,10 @@ import SwiftyJSON
 import JSSAlertView
 import SafariServices
 
-class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate{
+class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate{
+    
+    //MARK: Properties
+    
     // zip code search
     @IBOutlet weak var zipSearch: UITextField!
     // radius selector
@@ -21,16 +24,16 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
     @IBOutlet weak var mapView: MKMapView!
     // array of annotations for mapView
     var pinsArray: [MKPointAnnotation] = []
-    
+    // search button
     @IBAction func searchMapButton(_ sender: UIButton) {
         OperationQueue.main.cancelAllOperations()
         // remove all annotations from map and clear pinsArray
         mapView.removeAnnotations(mapView.annotations)
         self.pinsArray.removeAll()
         // call function to check zipcode
-        _ = textFieldShouldReturn(zipSearch)
+        textFieldShouldReturn(zipSearch)
     }
-    
+    // clear button
     @IBAction func clearMapButton(_ sender: UIButton) {
         OperationQueue.main.cancelAllOperations()
         // removes all annotations from map and clear pinsArray
@@ -39,7 +42,7 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         // resets map to North America region
         let regionNorthAmerica = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(46.828, -101.759), 4900000, 4900000))
         mapView.region = regionNorthAmerica
-        // clears zipcode entry field
+        // clears zip search field
         zipSearch.text = ""
     }
     
@@ -69,8 +72,15 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
         super.didReceiveMemoryWarning()
     }
     
+    // drops keyboard upon single screen tap
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //MARK: Private Functions
+    
     // checks ZIP code text for 5 exactly digits
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    private func textFieldShouldReturn(_ textField: UITextField) {
         // cast text from textfield as an int otherwise string will be nil
         let enteredText = Int(textField.text!)
         // if the UITextField for zipcode is empty AND without 5 characters
@@ -86,21 +96,14 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             }
         }
         else {
-            // function to drop keyboard on return
-            _ = textFieldShouldClear(zipSearch)
-            // function to send 5 digit zip to API call
+            // drop keyboard on return
+            zipSearch.resignFirstResponder()
+            // call function to send 5 digit zip to API call
             requestSheltersForZipcode(textField.text!)
         }
-        return true
     }
     
-    // function to make keyboard go down when (zipcode entered) return is pressed
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        zipSearch.resignFirstResponder()
-        return true
-    }
-    
-    func requestSheltersForZipcode(_ zipcode: String) {
+    private func requestSheltersForZipcode(_ zipcode: String) {
         // remove all annotations from map and clear pinsArray
         mapView.removeAnnotations(mapView.annotations)
         
@@ -268,6 +271,8 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
 
     }
     
+    //MARK: MKMapView
+    
     // function that creates custom annotation pin properties
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) ->
         MKAnnotationView? {
@@ -364,8 +369,5 @@ class GetInvolvedViewController: UIViewController, UITextFieldDelegate, MKMapVie
             }
         }
     }
-    // drops keyboard upon single screen tap
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+    
 }

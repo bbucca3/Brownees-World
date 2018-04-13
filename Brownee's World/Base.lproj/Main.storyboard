@@ -20,7 +20,7 @@
         <!--Search-->
         <scene sceneID="zcd-T2-Gd4">
             <objects>
-                <viewController id="p4a-Th-fg6" customClass="GetInvolvedViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="p4a-Th-fg6" customClass="SearchViewController" customModule="Brownees_World" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XPe-jM-uS9"/>
                         <viewControllerLayoutGuide type="bottom" id="oQn-Eg-3Iy"/>
@@ -35,10 +35,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a 5 Digit USA ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="diR-NK-ShZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a 5 Digit ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="diR-NK-ShZ">
                                 <rect key="frame" x="0.0" y="75.333333333333329" width="375" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="5PA-Qo-2fz">
                                 <rect key="frame" x="16" y="110.33333333333333" width="338" height="28.999999999999986"/>
