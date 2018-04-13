@@ -1,5 +1,5 @@
 //
-//  InfoViewController.swift
+//  SupportViewController.swift
 //  Brownees World
 //
 //  Created by Benjamin Bucca on 8/11/16.
@@ -8,9 +8,40 @@
 import UIKit
 import JSSAlertView
 
-class InfoViewController: UIViewController {
+class SupportViewController: UIViewController {
+    
+    //MARK: Properties
     
     @IBOutlet weak var supportText: UITextView!
+    // Donate to Animal Assistance
+    @IBAction func donateButton(_ sender: AnyObject) {
+        guard let url = URL(string: "http://www.animalassistance.org/donations/") else {
+            return //be safe
+        }
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    // Register for RescueGroups API
+    @IBAction func registerShelterButton(_ sender: UIButton) {
+        let customIcon:UIImage! = UIImage(named: "dog_house_tab_filled")
+        DispatchQueue.main.async { [unowned self] in
+            let alertView = JSSAlertView().show(
+                self,
+                title: "Open RescueGroups Sign Up Link",
+                text: "Follow the instructions via the link on the next page to register a rescue organization or shelter for the RescueGroups API search.",
+                buttonText: "Open",
+                cancelButtonText: "Close",
+                color: UIColorFromHex(0xFFF7F0, alpha: 0.95),
+                iconImage: customIcon)
+            alertView.addAction(self.visitRescueGroups)
+            alertView.setTitleFont("Helvetica")
+            alertView.setTextFont("Helvetica")
+            alertView.setButtonFont("Helvetica")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,38 +68,11 @@ class InfoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func donateButton(_ sender: AnyObject) {
-        guard let url = URL(string: "http://www.animalassistance.org/donations/") else {
-            return //be safe
-        }
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
-    }    
     
-    @IBAction func registerShelterButton(_ sender: UIButton) {
-        let customIcon:UIImage! = UIImage(named: "dog_house_tab_filled")
-        DispatchQueue.main.async { [unowned self] in
-            let alertView = JSSAlertView().show(
-                self,
-                title: "Open RescueGroups Sign Up Link",
-                text: "Follow the instructions via the link on the next page to register a rescue organization or shelter for the RescueGroups API search.",
-                buttonText: "Open",
-                cancelButtonText: "Close",
-                color: UIColorFromHex(0xFFF7F0, alpha: 0.95),
-                iconImage: customIcon)
-            alertView.addAction(self.visitRescueGroups)
-            alertView.setTitleFont("Helvetica")
-            alertView.setTextFont("Helvetica")
-            alertView.setButtonFont("Helvetica")
-        }
-    }
+    //MARK: Private Functions
     
     // function to open rescue groups sign up website
-    func visitRescueGroups() {
+    private func visitRescueGroups() {
         guard let url = URL(string: "https://rescuegroups.org/sign-up/") else {
             return //be safe
         }
@@ -79,10 +83,10 @@ class InfoViewController: UIViewController {
         }
     }
 
-// MARK: - Navigation
+    // MARK: - Navigation
  
     @IBAction func unwindToInfo(segue:UIStoryboardSegue) {
-    // unwind from donation items list
+        // unwind from donation items list
     }
 
 }
