@@ -20,25 +20,25 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
     @IBOutlet weak var zipSearch: UITextField!
     // radius selector
     @IBOutlet weak var radiusSelect: UISegmentedControl!
-    // map kit map view
+    // Map kit map view
     @IBOutlet weak var mapView: MKMapView!
-    // array of annotations for mapView
-    var pinsArray: [MKPointAnnotation] = []
-    // search button
+    // Array of annotations for mapView
+    var mapViewPinsArray: [MKPointAnnotation] = []
+    // Search input button
     @IBAction func searchMapButton(_ sender: UIButton) {
         OperationQueue.main.cancelAllOperations()
-        // remove all annotations from map and clear pinsArray
+        // Remove all annotations from map and clears mapViewPinsArray
         mapView.removeAnnotations(mapView.annotations)
-        self.pinsArray.removeAll()
-        // call function to check zipcode
+        self.mapViewPinsArray.removeAll()
+        // Call function to check zipcode
         textFieldShouldReturn(zipSearch)
     }
-    // clear button
+    // Clear input button
     @IBAction func clearMapButton(_ sender: UIButton) {
         OperationQueue.main.cancelAllOperations()
-        // removes all annotations from map and clear pinsArray
+        // removes all annotations from map and clear mapViewPinsArray
         mapView.removeAnnotations(mapView.annotations)
-        self.pinsArray.removeAll()
+        self.mapViewPinsArray.removeAll()
         // resets map to North America region
         let regionNorthAmerica = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(46.828, -101.759), 4900000, 4900000))
         mapView.region = regionNorthAmerica
@@ -104,8 +104,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
     }
     
     private func requestSheltersForZipcode(_ zipcode: String) {
-        // remove all annotations from map and clear pinsArray
+        // Remove all annotations from map and clear mapViewPinsArray
         mapView.removeAnnotations(mapView.annotations)
+        self.mapViewPinsArray.removeAll()
         
         var radiusInput: String = "0"
         
@@ -120,7 +121,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
             break
         }
         
-        let resultLimit: String = "59"
+        let resultLimit: String = "50"
         
         let headers = [
             "content-type": "application/json",
@@ -152,7 +153,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
             ]
         ] as [String : Any]
         
-        // array of Organization (struct) objects to be fed from API call
+        // Create array of Organization (struct) objects to be fed from API call
         var allOrganizations:[Organization] = []
         // API request address
         let apiToContact = "https://api.rescuegroups.org/http/v2.json"
@@ -166,17 +167,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
                     //print(value)
                     let json = JSON(value)
                     let resultsDictionary = json.dictionaryValue
-                    print("parameters: ", parameters)
-                    print("RESULTS: ", resultsDictionary)
+                    //print("parameters: ", parameters)
+                    //print("RESULTS: ", resultsDictionary)
                     
-                    // check for empty results or errors within json response before populating search results dictionary
+                    // Check for empty results or errors within json response before populating search results dictionary
                     if( resultsDictionary["foundRows"] == 0 || resultsDictionary["status"] == "error" ) {
-                        // show error message modal
+                        // Show error message modal
                         DispatchQueue.main.async { [unowned self] in
                             JSSAlertView().show(
                                 self,
                                 title: "0 Results Found",
-                                text: "Please try searching with another zip code or a different radius.",
+                                text: "Please try searching with a different zip code or a different radius.",
                                 buttonText: "Ok",
                                 color: UIColorFromHex(0xED3F3B, alpha: 0.65))
                         }
@@ -191,21 +192,21 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
                             allOrganizations.append(currentOrg)
                         }
                     }
-                    // print(allOrganizations)
+                    
                     // geoCoder object handles locating orgs based on data from API call
                     let geoCoder = CLGeocoder()
-                    // object holds each annotation-creation operation
+                    // Holds each map pin annotation-creation operation
                     let operationQueue = OperationQueue()
                     
-                    // sets number of able concurrent operations
+                    // Set number of able concurrent operations
                     operationQueue.maxConcurrentOperationCount = 1
-                    // runs at end of operation queue
+                    // Runs at end of operation queue
                     let completionOperation = BlockOperation(block: {
                         // display all pin annotations on map
-                        self.mapView.showAnnotations(self.pinsArray, animated: false)
+                        self.mapView.showAnnotations(self.mapViewPinsArray, animated: true)
                         operationQueue.cancelAllOperations()
                     })
-                    // loop through each org to create geocode operation
+                    // Loop through each org to create a geocode operation
                     for org in allOrganizations {
                         
                             let operation = BlockOperation(block: {
@@ -213,7 +214,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
                                 let semaphore = DispatchSemaphore(value: 0);
                                 
                                 let orgLocation = org.address + " " + org.city + " " + org.state + " " + org.zipcode + " " + org.country
-                                print("orgLocation: ", orgLocation)
+                                // print("orgLocation: ", orgLocation)
                                 geoCoder.geocodeAddressString(orgLocation, completionHandler: { placemarks, error in
                                     if error != nil {
                                         //print(error?.localizedDescription.)
@@ -223,7 +224,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
                                             JSSAlertView().show(
                                                 self,
                                                 title: "Error",
-                                                text: "Search Overload (Please Wait a Minute Before Searching Again).",
+                                                text: "Search Overload (Please Wait 1 Minute Before Searching Again).",
                                                 buttonText: "Ok",
                                                 color: UIColorFromHex(0x942522, alpha: 0.85))
                                         }
@@ -249,7 +250,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
                                                 pointAnnotation.subtitle = org.website
                                             }
                                             // append newly created annotation to array.
-                                            self.pinsArray.append(pointAnnotation)
+                                            self.mapViewPinsArray.append(pointAnnotation)
                                         }
                                     }
                                     semaphore.signal()
