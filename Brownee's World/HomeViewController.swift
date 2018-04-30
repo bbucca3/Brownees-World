@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Brownee's World
 //
 //  Created by Benjamin Bucca on 7/20/16.
@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDelegate {
+class HomeViewController: UIViewController, UITabBarDelegate, UIGestureRecognizerDelegate {
 
     
     override func viewDidLoad() {

@@ -14,11 +14,11 @@ class BrowneeTests: XCTestCase {
     func testViewController() {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc: ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let vcHome = vc
-        _ = vcHome.view // To call viewDidLoad
         
-        XCTAssertNotNil(vc)
+        let homeVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") 
+        _ = homeVC.view // calls viewDidLoad
+        
+        XCTAssertNotNil(homeVC)
     }
     
     func testOrganization() {
