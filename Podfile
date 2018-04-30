@@ -9,6 +9,10 @@ target 'Brownees World' do
   pod 'Alamofire'
   pod 'JSSAlertView'
   pod 'paper-onboarding'
+  # BrowneeTests
+  target 'BrowneeTests' do
+      inherit! :complete
+  end
 
 end
 

@@ -5,10 +5,17 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.2.0)
+  - Alamofire
   - JSSAlertView
-  - paper-onboarding (~> 2.0.1)
+  - paper-onboarding
   - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - JSSAlertView
+    - paper-onboarding
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
@@ -16,6 +23,6 @@ SPEC CHECKSUMS:
   paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: e3078cdf58bc4c7369acd7956b7bef879a21cc1b
+PODFILE CHECKSUM: dce2557d745c5e2a019c1bbf878363af9bd24fd4
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.5.0

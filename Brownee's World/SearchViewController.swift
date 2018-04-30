@@ -168,7 +168,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, MKMapViewDele
                     let json = JSON(value)
                     let resultsDictionary = json.dictionaryValue
                     //print("parameters: ", parameters)
-                    //print("RESULTS: ", resultsDictionary)
+                    print("RESULTS: ", resultsDictionary)
                     
                     // Check for empty results or errors within json response before populating search results dictionary
                     if( resultsDictionary["foundRows"] == 0 || resultsDictionary["status"] == "error" ) {

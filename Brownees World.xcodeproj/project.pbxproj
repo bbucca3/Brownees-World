@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4FCBFF69C47B6D222D93989B /* Pods_Brownees_World.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE180D6410C8003EEA98B43 /* Pods_Brownees_World.framework */; };
+		631CDC5220976CBC00E48540 /* BrowneeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CDC5120976CBC00E48540 /* BrowneeTests.swift */; };
 		632590AA1D5D412300862F7A /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632590A91D5D412300862F7A /* SupportViewController.swift */; };
 		632590AC1D5F813F00862F7A /* SuppliesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632590AB1D5F813F00862F7A /* SuppliesTableViewController.swift */; };
 		632590AE1D5F84A800862F7A /* SuppliesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632590AD1D5F84A800862F7A /* SuppliesTableViewCell.swift */; };
@@ -26,10 +27,26 @@
 		636CFA631D4F8B10008CA728 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CFA621D4F8B10008CA728 /* Organization.swift */; };
 		63D8C6961D5CF82E009A4613 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331CB561D3FFF8400A72E8D /* SearchViewController.swift */; };
 		63D8C6981D5D08B5009A4613 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C6971D5D08B5009A4613 /* OnboardViewController.swift */; };
+		C40C9A879E08D97C175F5817 /* Pods_Brownees_World_BrowneeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CF94C800CAE114C2B22623 /* Pods_Brownees_World_BrowneeTests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		631CDC5420976CBC00E48540 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6331CB371D3FB1FD00A72E8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6331CB3E1D3FB1FD00A72E8D;
+			remoteInfo = "Brownees World";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		284D1428164E477F5655D9EA /* Pods-Brownee's World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownee's World.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brownee's World/Pods-Brownee's World.debug.xcconfig"; sourceTree = "<group>"; };
+		5342157541BBB6F049468316 /* Pods-Brownees World-BrowneeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownees World-BrowneeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brownees World-BrowneeTests/Pods-Brownees World-BrowneeTests.release.xcconfig"; sourceTree = "<group>"; };
+		55CF94C800CAE114C2B22623 /* Pods_Brownees_World_BrowneeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brownees_World_BrowneeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		631CDC4F20976CBC00E48540 /* BrowneeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowneeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		631CDC5120976CBC00E48540 /* BrowneeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowneeTests.swift; sourceTree = "<group>"; };
+		631CDC5320976CBC00E48540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		632590A91D5D412300862F7A /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		632590AB1D5F813F00862F7A /* SuppliesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesTableViewController.swift; sourceTree = "<group>"; };
 		632590AD1D5F84A800862F7A /* SuppliesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesTableViewCell.swift; sourceTree = "<group>"; };
@@ -53,11 +70,20 @@
 		9B6BE021D6D53FB560E16CDD /* Pods-Brownee's World.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownee's World.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brownee's World/Pods-Brownee's World.release.xcconfig"; sourceTree = "<group>"; };
 		9C5C337381E3218FD1E90546 /* Pods-Brownees World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownees World.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brownees World/Pods-Brownees World.debug.xcconfig"; sourceTree = "<group>"; };
 		B039A3BF0F35CABBB74096EB /* Pods_Brownee_s_World.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brownee_s_World.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C74B26A963C12F4B36AA451D /* Pods-Brownees World-BrowneeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownees World-BrowneeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brownees World-BrowneeTests/Pods-Brownees World-BrowneeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F271D7CB58F14FE116BFA65B /* Pods-Brownees World.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brownees World.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brownees World/Pods-Brownees World.release.xcconfig"; sourceTree = "<group>"; };
 		FAE180D6410C8003EEA98B43 /* Pods_Brownees_World.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brownees_World.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		631CDC4C20976CBC00E48540 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C40C9A879E08D97C175F5817 /* Pods_Brownees_World_BrowneeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6331CB3C1D3FB1FD00A72E8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,14 +104,26 @@
 				9B6BE021D6D53FB560E16CDD /* Pods-Brownee's World.release.xcconfig */,
 				9C5C337381E3218FD1E90546 /* Pods-Brownees World.debug.xcconfig */,
 				F271D7CB58F14FE116BFA65B /* Pods-Brownees World.release.xcconfig */,
+				C74B26A963C12F4B36AA451D /* Pods-Brownees World-BrowneeTests.debug.xcconfig */,
+				5342157541BBB6F049468316 /* Pods-Brownees World-BrowneeTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		631CDC5020976CBC00E48540 /* BrowneeTests */ = {
+			isa = PBXGroup;
+			children = (
+				631CDC5120976CBC00E48540 /* BrowneeTests.swift */,
+				631CDC5320976CBC00E48540 /* Info.plist */,
+			);
+			path = BrowneeTests;
 			sourceTree = "<group>";
 		};
 		6331CB361D3FB1FD00A72E8D = {
 			isa = PBXGroup;
 			children = (
 				6331CB411D3FB1FD00A72E8D /* Brownees World */,
+				631CDC5020976CBC00E48540 /* BrowneeTests */,
 				6331CB401D3FB1FD00A72E8D /* Products */,
 				0CE7C729A3FE923FDE5C1042 /* Pods */,
 				6FBCB06F8D7401BD915CA00D /* Frameworks */,
@@ -96,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				6331CB3F1D3FB1FD00A72E8D /* Brownees World.app */,
+				631CDC4F20976CBC00E48540 /* BrowneeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +171,7 @@
 				6331CB601D41623B00A72E8D /* SwiftyJSON.framework */,
 				B039A3BF0F35CABBB74096EB /* Pods_Brownee_s_World.framework */,
 				FAE180D6410C8003EEA98B43 /* Pods_Brownees_World.framework */,
+				55CF94C800CAE114C2B22623 /* Pods_Brownees_World_BrowneeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +179,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		631CDC4E20976CBC00E48540 /* BrowneeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631CDC5620976CBC00E48540 /* Build configuration list for PBXNativeTarget "BrowneeTests" */;
+			buildPhases = (
+				BE1FA34B1BEB3938CE761519 /* [CP] Check Pods Manifest.lock */,
+				631CDC4B20976CBC00E48540 /* Sources */,
+				631CDC4C20976CBC00E48540 /* Frameworks */,
+				631CDC4D20976CBC00E48540 /* Resources */,
+				9285045D4EF2367AE4274C32 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				631CDC5520976CBC00E48540 /* PBXTargetDependency */,
+			);
+			name = BrowneeTests;
+			productName = BrowneeTests;
+			productReference = 631CDC4F20976CBC00E48540 /* BrowneeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6331CB3E1D3FB1FD00A72E8D /* Brownees World */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6331CB511D3FB1FD00A72E8D /* Build configuration list for PBXNativeTarget "Brownees World" */;
@@ -148,7 +208,6 @@
 				6331CB3C1D3FB1FD00A72E8D /* Frameworks */,
 				6331CB3D1D3FB1FD00A72E8D /* Resources */,
 				69549A97DE05616667A1E382 /* [CP] Embed Pods Frameworks */,
-				AC3125EDF0EED2AF1C0C43CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,10 +224,16 @@
 		6331CB371D3FB1FD00A72E8D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Animal Assistance";
 				TargetAttributes = {
+					631CDC4E20976CBC00E48540 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 8JDE23S344;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6331CB3E1D3FB1FD00A72E8D;
+					};
 					6331CB3E1D3FB1FD00A72E8D = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8JDE23S344;
@@ -195,11 +260,19 @@
 			projectRoot = "";
 			targets = (
 				6331CB3E1D3FB1FD00A72E8D /* Brownees World */,
+				631CDC4E20976CBC00E48540 /* BrowneeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		631CDC4D20976CBC00E48540 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6331CB3D1D3FB1FD00A72E8D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,13 +293,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brownees World-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		69549A97DE05616667A1E382 /* [CP] Embed Pods Frameworks */ = {
@@ -235,33 +311,77 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Brownees World/Pods-Brownees World-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/JSSAlertView/JSSAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSSAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brownees World/Pods-Brownees World-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC3125EDF0EED2AF1C0C43CD /* [CP] Copy Pods Resources */ = {
+		9285045D4EF2367AE4274C32 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Brownees World-BrowneeTests/Pods-Brownees World-BrowneeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/JSSAlertView/JSSAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSSAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brownees World/Pods-Brownees World-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brownees World-BrowneeTests/Pods-Brownees World-BrowneeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1FA34B1BEB3938CE761519 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brownees World-BrowneeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		631CDC4B20976CBC00E48540 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631CDC5220976CBC00E48540 /* BrowneeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6331CB3B1D3FB1FD00A72E8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +403,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		631CDC5520976CBC00E48540 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6331CB3E1D3FB1FD00A72E8D /* Brownees World */;
+			targetProxy = 631CDC5420976CBC00E48540 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		6331CB461D3FB1FD00A72E8D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -303,6 +431,55 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		631CDC5720976CBC00E48540 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C74B26A963C12F4B36AA451D /* Pods-Brownees World-BrowneeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JDE23S344;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BrowneeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.bbucca3.BrowneeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brownees World.app/Brownees World";
+			};
+			name = Debug;
+		};
+		631CDC5820976CBC00E48540 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5342157541BBB6F049468316 /* Pods-Brownees World-BrowneeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JDE23S344;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BrowneeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.bbucca3.BrowneeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brownees World.app/Brownees World";
+			};
+			name = Release;
+		};
 		6331CB4F1D3FB1FD00A72E8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -440,6 +617,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		631CDC5620976CBC00E48540 /* Build configuration list for PBXNativeTarget "BrowneeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631CDC5720976CBC00E48540 /* Debug */,
+				631CDC5820976CBC00E48540 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6331CB3A1D3FB1FD00A72E8D /* Build configuration list for PBXProject "Brownees World" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

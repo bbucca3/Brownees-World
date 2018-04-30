@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "631CDC4E20976CBC00E48540"
+               BuildableName = "BrowneeTests.xctest"
+               BlueprintName = "BrowneeTests"
+               ReferencedContainer = "container:Brownees World.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
