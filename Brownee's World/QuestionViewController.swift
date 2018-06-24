@@ -26,12 +26,13 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
-    // Received specific question array from segue
+    // Received question array from specific segue
     var questionArray : [Question] = []
-    // Index for questionArray
-    var currentIndex : Int = 0
-    // Index for dogImage transform
+    // Index for each question in questionArray
+    var questionIndex : Int = 0
+    // Index for dogImage animation
     var dogIndex : CGFloat = 0.0
+    
     // Yes button
     @IBAction func trueButton(_ sender: UIButton) {
         self.checkAnswer(true)
@@ -43,12 +44,10 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set index for going through questionArray
-        currentIndex = 0
         // Set label text of question category
-        categoryLabel.text = questionArray[currentIndex].category
+        categoryLabel.text = questionArray[questionIndex].category
         // Set first question text
-        questionField.text = questionArray[currentIndex].question
+        questionField.text = questionArray[questionIndex].question
         // Create custom background gradient
         let topColor = UIColorFromHex(0xFFF7F0, alpha: 1.0)
         let bottomColor = UIColorFromHex(0xECDACC, alpha: 1.0)
@@ -74,29 +73,31 @@ class QuestionViewController: UIViewController {
     
     // function that displays next question text from array of questions and updates score
     private func showNextQuestion() {
-        questionField.text = questionArray[currentIndex].question
-        scoreField.text = "Question number: " + String(currentIndex+1) + " / " + String(questionArray.count)
+        questionField.text = questionArray[questionIndex].question
+        scoreField.text = "Question number: " + String(questionIndex + 1) + " / " + String(questionArray.count)
     }
     
     // function that accepts either true or false (usersAnswer)
     private func checkAnswer(_ usersAnswer: Bool) {
-        // check usersAnswer true or false
-        if(questionArray[currentIndex].ans == usersAnswer) {
-            // show dog and dogbowl image
+        // check usersAnswer true
+        if (questionArray[questionIndex].ans == usersAnswer) {
+            // show dog image, dogbowl image and doghouse image
             dogImage.isHidden = false
             dogFoodImage.isHidden = false
             dogHouseImage.isHidden = false
             
-            // animate dog for each correct answer
-            UIView.animate(withDuration: 0.5, animations: {
-                self.dogIndex += self.view.frame.width / 12.0
+            // animate dog image for each correct answer
+            UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+                self.dogIndex += (self.view.frame.width * (10/120))
                 self.dogImage.transform = CGAffineTransform(translationX: CGFloat(self.dogIndex), y: 0)
+            }, completion: { (true) in
+                print("animation complete ", self.dogIndex)
             })
             
             // increment (question) array index
-            currentIndex += 1
+            questionIndex += 1
             // if question # is greater than or equal to num of questions then seque back
-            if(currentIndex >= questionArray.count) {
+            if (questionIndex >= questionArray.count) {
                 // call function to present Finished modal
                 self.finishedWithQuestions()
                 return
@@ -104,14 +105,14 @@ class QuestionViewController: UIViewController {
             // update question text field and score
             showNextQuestion()
         }
-            
+        // check usersAnswer false
         else {
-            // show modal for consideration answer
+            // show modal for consideration to answer
             DispatchQueue.main.async { [unowned self] in
                 let alertView = JSSAlertView().warning(
                     self,
                     title: "Consider",
-                    text: self.questionArray[self.currentIndex].explanation,
+                    text: self.questionArray[self.questionIndex].explanation,
                     buttonText: "Ok"
                     )
                 alertView.addAction(self.showNextQuestion)

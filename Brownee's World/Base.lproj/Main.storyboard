@@ -536,12 +536,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browneeGame" translatesAutoresizingMaskIntoConstraints="NO" id="Uyb-7S-WsU">
-                                <rect key="frame" x="50" y="561" width="125" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="9KU-RD-JkO"/>
-                                </constraints>
-                            </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browneeHouseGame" translatesAutoresizingMaskIntoConstraints="NO" id="kpJ-Dn-SRA">
                                 <rect key="frame" x="302" y="561" width="53" height="61"/>
                                 <constraints>
@@ -576,6 +570,12 @@
                                     <segue destination="6gJ-nQ-wZp" kind="unwind" identifier="cancelSegue" unwindAction="cancelSegue:" id="OP7-iF-pcn"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browneeGame" translatesAutoresizingMaskIntoConstraints="NO" id="Uyb-7S-WsU">
+                                <rect key="frame" x="20" y="561" width="125" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="9KU-RD-JkO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96078431372549022" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -593,7 +593,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="v9i-B3-C0Q" secondAttribute="trailing" constant="40" id="a56-qS-N1c"/>
                             <constraint firstItem="DQt-ge-CJB" firstAttribute="top" secondItem="quH-BM-1FC" secondAttribute="top" constant="148" id="ac4-eU-b1z"/>
                             <constraint firstItem="Uyb-7S-WsU" firstAttribute="top" secondItem="dWN-CQ-2G8" secondAttribute="bottom" constant="6" id="bgH-OE-JVc"/>
-                            <constraint firstItem="Uyb-7S-WsU" firstAttribute="leading" secondItem="Pcq-LI-zHm" secondAttribute="leading" id="cWj-A7-BZX"/>
                             <constraint firstAttribute="trailing" secondItem="dWN-CQ-2G8" secondAttribute="trailing" constant="50" id="crj-mJ-WCq"/>
                             <constraint firstItem="8az-vS-b0P" firstAttribute="top" secondItem="Bvr-Tk-4Si" secondAttribute="bottom" constant="16" id="dId-bJ-nTu"/>
                             <constraint firstAttribute="trailing" secondItem="kpJ-Dn-SRA" secondAttribute="trailing" constant="20" id="eSN-7d-a29"/>
@@ -603,6 +602,7 @@
                             <constraint firstItem="Pcq-LI-zHm" firstAttribute="top" secondItem="dWN-CQ-2G8" secondAttribute="bottom" constant="10" id="mcp-ez-XNC"/>
                             <constraint firstItem="DQt-ge-CJB" firstAttribute="leading" secondItem="quH-BM-1FC" secondAttribute="leadingMargin" constant="30" id="q6T-6Z-pfu"/>
                             <constraint firstItem="v9i-B3-C0Q" firstAttribute="top" secondItem="kpJ-Dn-SRA" secondAttribute="bottom" constant="2" id="qLC-dc-ukr"/>
+                            <constraint firstItem="Uyb-7S-WsU" firstAttribute="leading" secondItem="quH-BM-1FC" secondAttribute="leading" constant="20" id="tXZ-7D-on5"/>
                             <constraint firstItem="DQt-ge-CJB" firstAttribute="centerX" secondItem="dWN-CQ-2G8" secondAttribute="centerX" id="xo2-N6-xgS"/>
                             <constraint firstAttribute="trailing" secondItem="Pcq-LI-zHm" secondAttribute="trailing" constant="50" id="z5R-5y-DPM"/>
                         </constraints>
