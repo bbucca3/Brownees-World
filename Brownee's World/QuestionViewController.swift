@@ -31,7 +31,7 @@ class QuestionViewController: UIViewController {
     // Index for questionArray
     var currentIndex : Int = 0
     // Index for dogImage transform
-    var dogIndex : Float = 0.0
+    var dogIndex : CGFloat = 0.0
     // Yes button
     @IBAction func trueButton(_ sender: UIButton) {
         self.checkAnswer(true)
@@ -85,18 +85,19 @@ class QuestionViewController: UIViewController {
             // show dog and dogbowl image
             dogImage.isHidden = false
             dogFoodImage.isHidden = false
-            dogHouseImage.isHidden = false 
-            // distance to increase dog each question
-            dogIndex += 20.0
+            dogHouseImage.isHidden = false
+            
             // animate dog for each correct answer
-            UIView.animate(withDuration: 1.0, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.dogIndex += self.view.frame.width / 12.0
                 self.dogImage.transform = CGAffineTransform(translationX: CGFloat(self.dogIndex), y: 0)
-            }) 
+            })
+            
             // increment (question) array index
             currentIndex += 1
             // if question # is greater than or equal to num of questions then seque back
             if(currentIndex >= questionArray.count) {
-                // call function to present finished modal
+                // call function to present Finished modal
                 self.finishedWithQuestions()
                 return
             }
